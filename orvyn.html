@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,47 +5,116 @@
   <meta name="theme-color" content="#070b14">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Orvyn | Andronex Studio</title>
+  <meta name="description" content="Meet Orvyn, an ambitious AI assistant developed by Andronex Studio.">
+
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .orvyn-preview {
+      max-width: 340px;
+      width: 100%;
+      margin: 35px auto;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      box-shadow: 0 0 35px rgba(0, 200, 255, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .orvyn-preview:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 45px rgba(0, 200, 255, 0.22);
+    }
+
+    .orvyn-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .preview-caption {
+      text-align: center;
+      color: #9caec5;
+      font-size: 14px;
+      margin-top: -18px;
+      margin-bottom: 35px;
+    }
+
+    .orvyn-features {
+      max-width: 750px;
+      margin: 50px auto;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .orvyn-features h2 {
+      margin-bottom: 20px;
+    }
+
+    .orvyn-features p {
+      line-height: 1.8;
+    }
+  </style>
 </head>
+
 <body>
   <canvas id="neural-bg"></canvas>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-symbol">A</div>
+      <div class="brand-name">ANDRONEX<span>STUDIO</span></div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="tag">ANDRONEX FLAGSHIP PROJECT</div>
+
+    <h1>Meet <span>Orvyn.</span></h1>
+
+    <p>
+      Intelligence beyond ordinary conversations.
+      An ambitious AI assistant built to explore
+      what's possible with intelligent technology.
+    </p>
+
+    <div class="tag">CURRENT STATUS: IN DEVELOPMENT</div>
+
+    <!-- Orvyn app screenshot -->
+    <figure class="orvyn-preview">
+      <img
+        src="orvyn-preview.jpg"
+        alt="Orvyn AI assistant interface showing its chat screen"
+        loading="lazy"
+      >
+    </figure>
+
+    <p class="preview-caption">
+      A preview of the Orvyn AI interface.
+    </p>
+  </main>
+
+  <section class="about orvyn-features">
+    <h2>Our Vision</h2>
+
+    <p>
+      Orvyn aims to bring conversational intelligence,
+      long-term memory, research capabilities and
+      creative tools into one assistant.
+    </p>
+  </section>
+
+  <footer>© 2026 Andronex Studio.</footer>
+
   <script src="script.js"></script>
-
-<header>
-  <a href="index.html" class="brand">
-    <div class="brand-symbol">A</div>
-    <div class="brand-name">ANDRONEX<span>STUDIO</span></div>
-  </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main class="hero">
-  <div class="tag">ANDRONEX FLAGSHIP PROJECT</div>
-  <h1>Meet <span>Orvyn.</span></h1>
-  <p>
-    Intelligence beyond ordinary conversations.
-    An ambitious AI assistant built to explore
-    what's possible with intelligent technology.
-  </p>
-  <div class="tag">CURRENT STATUS: IN DEVELOPMENT</div>
-</main>
-
-<section class="about">
-  <h2>Our Vision</h2>
-  <p>
-    Orvyn aims to bring conversational intelligence,
-    long-term memory, research capabilities and
-    creative tools into one assistant.
-  </p>
-</section>
-
-<footer>© 2026 Andronex Studio.</footer>
-
 </body>
 </html>
