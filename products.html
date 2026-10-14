@@ -5,125 +5,247 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#080b18">
 
-    <title>Products | Andronex Studio</title>
+    <title>Our Projects | Andronex Studio</title>
+
+    <meta name="description"
+          content="Explore AI assistants and gaming projects built by Andronex Studio.">
 
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        .products-section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 65px 20px;
+        * {
+            box-sizing: border-box;
         }
 
-        .products-heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .products-heading h1 {
-            font-size: clamp(2rem, 7vw, 3.5rem);
+        body {
+            margin: 0;
+            background: #080b18;
             color: #ffffff;
+            font-family: Arial, sans-serif;
         }
 
-        .products-heading p {
-            color: #aab4d0;
-            margin-top: 12px;
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .products-container {
+            width: min(1100px, 100%);
+            margin: auto;
+            padding: 55px 18px 70px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 30px 0 45px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: #67a5ff;
+            border: 1px solid #263e69;
+            background: #101b32;
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 8vw, 58px);
+            margin: 22px 0 14px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: #4a91ff;
+        }
+
+        .hero p {
+            max-width: 550px;
+            margin: auto;
+            color: #aab5ce;
+            line-height: 1.8;
+            font-size: 15px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(min(100%, 280px), 1fr)
-            );
-            gap: 24px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
         }
 
         .product-card {
-            background: linear-gradient(
-                145deg,
-                #121a30,
-                #090d1b
-            );
-            border: 1px solid #263656;
-            border-radius: 18px;
-            padding: 25px;
-            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #24314d;
+            background: linear-gradient(
+                145deg,
+                #141d33,
+                #0b1020 75%
+            );
+            transition: transform 0.25s, border-color 0.25s;
         }
 
         .product-card:hover {
-            transform: translateY(-6px);
-            border-color: #3984ff;
-            box-shadow: 0 10px 35px #1677ff18;
+            transform: translateY(-5px);
+            border-color: #4389ff;
+        }
+
+        .product-card.game {
+            background: linear-gradient(
+                145deg,
+                #29131d,
+                #100c18 75%
+            );
+            border-color: #54283b;
+        }
+
+        .product-card.game:hover {
+            border-color: #ff5475;
         }
 
         .product-icon {
-            font-size: 42px;
-            margin-bottom: 18px;
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            background: #1a2b4a;
+            font-size: 32px;
+            margin-bottom: 22px;
         }
 
-        .product-tag {
-            color: #65a5ff;
-            font-size: 12px;
+        .game .product-icon {
+            background: #3b1b2b;
+        }
+
+        .product-category {
+            font-size: 11px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1.8px;
+            color: #69a8ff;
             margin-bottom: 10px;
         }
 
+        .game .product-category {
+            color: #ff7894;
+        }
+
         .product-card h2 {
-            color: #ffffff;
-            font-size: 23px;
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin: 0 0 13px;
         }
 
-        .product-card p {
-            color: #b3bdd4;
-            line-height: 1.7;
-            margin-bottom: 15px;
+        .product-description {
+            color: #b1bdd4;
+            line-height: 1.8;
+            font-size: 14px;
+            margin: 0 0 20px;
         }
 
-        .product-status {
-            color: #7fffb2 !important;
-            font-size: 13px;
+        .status {
+            display: inline-block;
+            color: #8af0b0;
+            font-size: 12px;
             font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .game .status {
+            color: #ff9caf;
+        }
+
+        .product-actions {
+            display: grid;
+            gap: 10px;
             margin-top: auto;
         }
 
-        .product-btn {
+        .btn {
             display: block;
+            width: 100%;
+            padding: 13px 15px;
             text-align: center;
             text-decoration: none;
-            background: #2878ff;
-            color: #ffffff;
-            padding: 13px 16px;
             border-radius: 10px;
-            margin-top: 12px;
+            font-size: 14px;
             font-weight: bold;
+            color: #ffffff;
+            background: #2878ff;
+            border: 1px solid #2878ff;
             transition: 0.2s;
         }
 
-        .product-btn:hover {
-            background: #5594ff;
-            transform: scale(1.02);
+        .btn:hover {
+            background: #438bff;
         }
 
-        .secondary-btn {
+        .btn-outline {
             background: transparent;
-            border: 1px solid #3984ff;
+            border-color: #354c72;
         }
 
-        .secondary-btn:hover {
-            background: #14284b;
+        .btn-outline:hover {
+            background: #19243a;
         }
 
-        .download-note {
-            color: #8997b5;
-            font-size: 12px;
-            margin-top: 12px;
-            line-height: 1.5;
+        .game .btn {
+            background: #e74466;
+            border-color: #e74466;
+        }
+
+        .game .btn:hover {
+            background: #ff5b7b;
+        }
+
+        .game .btn-outline {
+            background: transparent;
+            border-color: #754052;
+        }
+
+        .game .btn-outline:hover {
+            background: #351b29;
+        }
+
+        .wide-card {
+            grid-column: 1 / -1;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding: 25px 15px;
+            text-align: center;
+            color: #8492ad;
+            border-top: 1px solid #202a40;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 650px) {
+            .products-container {
+                padding: 30px 15px 45px;
+            }
+
+            .hero {
+                padding: 25px 0 35px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .wide-card {
+                grid-column: auto;
+            }
+
+            .product-card {
+                padding: 22px;
+            }
         }
     </style>
 </head>
@@ -143,109 +265,133 @@
         </nav>
     </header>
 
-    <main class="products-section">
+    <main class="products-container">
 
-        <div class="products-heading">
-            <h1>Our Projects</h1>
+        <section class="hero">
+            <span class="hero-label">THE ANDRONEX ECOSYSTEM</span>
+
+            <h1>Built With <span>Purpose.</span></h1>
+
             <p>
-                Ideas transformed into technology.
-                Explore the projects built by Andronex Studio.
+                From artificial intelligence to gaming,
+                explore the projects and ideas taking shape
+                at Andronex Studio.
             </p>
-        </div>
+        </section>
 
-        <div class="products-grid">
+        <section class="products-grid">
 
-            <!-- ORVYN -->
+            <!-- ORVYN AI -->
             <article class="product-card">
+
                 <div class="product-icon">🤖</div>
 
-                <div class="product-tag">ARTIFICIAL INTELLIGENCE</div>
+                <div class="product-category">
+                    ARTIFICIAL INTELLIGENCE
+                </div>
 
                 <h2>ORVYN</h2>
 
-                <p>
-                    An AI assistant project focused on intelligent
-                    conversations, personalised assistance,
-                    research and creativity.
+                <p class="product-description">
+                    A personalised AI assistant project designed
+                    around intelligent conversations, memory,
+                    research and creative problem-solving.
                 </p>
 
-                <p class="product-status">
-                    ● AI ASSISTANT PROJECT
-                </p>
+                <span class="status">● AI ASSISTANT PROJECT</span>
 
-                <a href="orvyn.html" class="product-btn">
-                    Explore Orvyn →
-                </a>
+                <div class="product-actions">
+                    <a href="orvyn.html" class="btn">
+                        Explore Orvyn →
+                    </a>
+                </div>
+
             </article>
 
             <!-- SOURAVAI -->
             <article class="product-card">
+
                 <div class="product-icon">🧠</div>
 
-                <div class="product-tag">ORIGINAL AI PROJECT</div>
+                <div class="product-category">
+                    ORIGINAL AI PROJECT
+                </div>
 
-                <h2>SOURAVAI</h2>
+                <h2>SouravAI</h2>
 
-                <p>
-                    The original AI assistant project that began
-                    the journey toward building more capable
-                    and personalised AI systems.
+                <p class="product-description">
+                    The original AI assistant project that
+                    started the journey toward building
+                    more personalised AI experiences.
                 </p>
 
-                <p class="product-status">
-                    ● ORIGINAL PROJECT
-                </p>
+                <span class="status">● ORIGINAL PROJECT</span>
 
-                <a href="souravai.html" class="product-btn">
-                    Explore SouravAI →
-                </a>
+                <div class="product-actions">
+                    <a href="souravai.html" class="btn">
+                        Explore SouravAI →
+                    </a>
+                </div>
+
             </article>
 
             <!-- FIVE NIGHTS HORROR -->
-            <article class="product-card">
+            <article class="product-card game wide-card">
+
                 <div class="product-icon">🎮</div>
 
-                <div class="product-tag">GAMING PROJECT</div>
-
-                <h2>FIVE NIGHTS HORROR</h2>
-
-                <p>
-                    An independent horror game developed as
-                    part of the Andronex Studio project lineup.
-                    Enter the game and face the unknown.
-                </p>
-
-                <p class="product-status">
-                    ● GAME APP CREATED
-                </p>
-
-                <a href="fnap.html" class="product-btn">
-                    Explore the Game →
-                </a>
-
-                <!-- Replace # with the actual APK download URL -->
-                <a
-                    href="app.apk"
-                    class="product-btn secondary-btn"
-                    onclick="alert('Add your APK download link to enable downloading.'); return false;"
-                >
-                    Download APK ↓
-                </a>
-
-                <div class="download-note">
-                    Android application. Download availability
-                    depends on the APK hosting link.
+                <div class="product-category">
+                    INDEPENDENT GAMING
                 </div>
+
+                <h2>Five Nights Horror</h2>
+
+                <p class="product-description">
+                    An original horror game app developed
+                    for Android. Enter the experience,
+                    face the unknown and discover the
+                    gaming side of Andronex Studio.
+                </p>
+
+                <span class="status">● GAME APP CREATED</span>
+
+                <div class="product-actions">
+
+                    <a href="fnap.html" class="btn">
+                        Explore Game Details →
+                    </a>
+
+                    <!--
+                    Replace YOUR_APK_DOWNLOAD_URL with the
+                    actual direct APK download URL.
+                    -->
+                    <a
+                        href="YOUR_APK_DOWNLOAD_URL"
+                        class="btn btn-outline"
+                        id="download-apk"
+                    >
+                        Download Android APK ↓
+                    </a>
+
+                </div>
+
             </article>
 
-        </div>
-    </main>
+        </section>
 
-    <footer>
-        <p>© 2026 Andronex Studio. Building Intelligence. Shaping Tomorrow.</p>
-    </footer>
+        <div class="footer-note">
+            <p>
+                <strong>ANDRONEX STUDIO</strong>
+            </p>
+
+            <p>Building Intelligence. Shaping Tomorrow.</p>
+
+            <p>© 2026 Andronex Studio. All rights reserved.</p>
+        </div>
+
+    </main>
 
     <script src="script.js"></script>
 
 </body>
-</html>
+    </html>
