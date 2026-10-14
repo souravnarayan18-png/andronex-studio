@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070b">
+  <meta name="robots" content="index, follow">
+
+  <meta name="description" content="Discover Five Nights Horror, an independent horror game project from Andronex Studio.">
+
+  <title>Five Nights Horror | Andronex Studio</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: #08070b;
+    }
+
+    .game-page {
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 22px 70px;
+    }
+
+    .game-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 25px;
+      text-align: center;
+      border: 1px solid #54232f;
+      border-radius: 24px;
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(153, 27, 55, .22),
+          transparent 65%
+        ),
+        linear-gradient(180deg, #130c13, #08070b);
+    }
+
+    .game-symbol {
+      width: 90px;
+      height: 90px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 25px;
+      border: 1px solid #fb7185;
+      border-radius: 22px;
+      background: #220d16;
+      box-shadow: 0 0 35px rgba(251, 113, 133, .15);
+      font-size: 42px;
+    }
+
+    .game-tag {
+      color: #fda4af;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .game-hero h1 {
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1.1;
+      margin: 20px 0;
+      letter-spacing: -1px;
+    }
+
+    .game-hero h1 span {
+      color: #fb7185;
+    }
+
+    .game-hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #b8aab5;
+      line-height: 1.9;
+    }
+
+    .development-badge {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 10px 16px;
+      border: 1px solid #713344;
+      border-radius: 30px;
+      background: #210e16;
+      color: #fda4af;
+      font-size: 12px;
+    }
+
+    .game-section {
+      margin-top: 28px;
+      padding: 30px;
+      border: 1px solid #35212d;
+      border-radius: 20px;
+      background: rgba(20, 13, 22, .8);
+    }
+
+    .game-section h2 {
+      font-size: 26px;
+      margin-top: 0;
+    }
+
+    .game-section h2 span {
+      color: #fb7185;
+    }
+
+    .game-section p {
+      color: #b8aab5;
+      line-height: 1.9;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .feature-card {
+      padding: 22px;
+      border: 1px solid #452332;
+      border-radius: 15px;
+      background: #120c13;
+    }
+
+    .feature-card .icon {
+      font-size: 26px;
+    }
+
+    .feature-card h3 {
+      font-size: 16px;
+      color: #ffe4e6;
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .game-cta {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .game-cta h2 {
+      font-size: 30px;
+    }
+
+    .game-cta p {
+      color: #b8aab5;
+      line-height: 1.8;
+    }
+
+    .game-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 13px 22px;
+      border: 1px solid #fb7185;
+      border-radius: 12px;
+      color: #fff;
+      background: #9f1239;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .game-button:hover {
+      background: #be123c;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: #fda4af;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .disclaimer {
+      color: #8e7e8a;
+      font-size: 12px;
+      line-height: 1.8;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .game-hero {
+        padding: 50px 18px;
+      }
+
+      .game-section {
+        padding: 24px 18px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="neural-bg"></canvas>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-symbol">A</div>
+      <div class="brand-name">
+        ANDRONEX<span>STUDIO</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="game-page">
+
+    <a class="back-link" href="products.html">
+      ← Back to Projects
+    </a>
+
+    <section class="game-hero">
+      <div class="game-symbol">🎮</div>
+
+      <div class="game-tag">
+        AN ANDRONEX STUDIO GAME PROJECT
+      </div>
+
+      <h1>
+        FIVE NIGHTS<br>
+        <span>HORROR</span>
+      </h1>
+
+      <p>
+        When the atmosphere turns unsettling,
+        every detail matters. Explore an independent
+        horror game concept built around suspense,
+        observation and survival.
+      </p>
+
+      <div class="development-badge">
+        ● GAME IN DEVELOPMENT
+      </div>
+    </section>
+
+    <section class="game-section">
+      <h2>The <span>Experience</span></h2>
+
+      <p>
+        Five Nights Horror is an independent game project
+        from Andronex Studio. Its goal is to create a tense,
+        atmospheric horror experience with mysterious
+        surroundings and strategic gameplay.
+      </p>
+
+      <p>
+        The project is inspired by the broader animatronic
+        survival-horror genre while developing its own
+        presentation and ideas.
+      </p>
+    </section>
+
+    <section class="game-section">
+      <h2>Planned <span>Highlights</span></h2>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <div class="icon">🌑</div>
+          <h3>Atmospheric Horror</h3>
+          <p>
+            A dark environment designed to build
+            tension through sound, lighting and suspense.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon">👁️</div>
+          <h3>Observe Carefully</h3>
+          <p>
+            A gameplay direction centred on paying
+            attention to your surroundings and making decisions.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon">🔒</div>
+          <h3>Survival Challenges</h3>
+          <p>
+            Planned challenges that reward careful
+            thinking and strategic resource use.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="game-section">
+      <h2>Development <span>Status</span></h2>
+
+      <p>
+        The game is currently under development.
+        Gameplay systems, supported devices, release dates
+        and final features have not yet been confirmed.
+      </p>
+
+      <p>
+        This page will be updated as the project progresses.
+      </p>
+    </section>
+
+    <section class="game-cta">
+      <h2>Every project starts somewhere.</h2>
+
+      <p>
+        Follow the journey of independent game development
+        at Andronex Studio.
+      </p>
+
+      <a class="game-button" href="products.html">
+        Explore All Projects →
+      </a>
+    </section>
+
+    <p class="disclaimer">
+      Five Nights Horror is an independent project from
+      Andronex Studio. It is not affiliated with or endorsed
+      by the creators of Five Nights at Freddy's.
+      Names and concepts from existing franchises belong
+      to their respective owners.
+    </p>
+
+  </main>
+
+  <footer>
+    © 2026 Andronex Studio. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
