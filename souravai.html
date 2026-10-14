@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,46 +5,231 @@
   <meta name="theme-color" content="#070b14">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SouravAI | Andronex Studio</title>
+
+  <title>SouravAI | The Beginning of Andronex Studio</title>
+
+  <meta name="description" content="Discover SouravAI, the original AI assistant project that began the journey toward Orvyn at Andronex Studio.">
+
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .souravai-badge {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      border-radius: 30px;
+      color: #60a5fa;
+      background: rgba(96, 165, 250, 0.07);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      margin: 15px 0;
+    }
+
+    .souravai-section {
+      max-width: 850px;
+      margin: 50px auto;
+      padding: 28px;
+      line-height: 1.8;
+    }
+
+    .souravai-section h2 {
+      margin-bottom: 16px;
+    }
+
+    .souravai-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 850px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .souravai-card {
+      padding: 24px;
+      border: 1px solid rgba(96, 165, 250, 0.17);
+      border-radius: 18px;
+      background: rgba(16, 23, 34, 0.82);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .souravai-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.6);
+    }
+
+    .souravai-card h3 {
+      margin-top: 0;
+      color: #60a5fa;
+    }
+
+    .souravai-card p {
+      line-height: 1.7;
+      color: #aebbd0;
+    }
+
+    .project-connection {
+      border-left: 3px solid #60a5fa;
+      background: rgba(96, 165, 250, 0.06);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .souravai-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 600px) {
+      .souravai-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+      }
+
+      .souravai-section {
+        margin: 25px auto;
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <canvas id="neural-bg"></canvas>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-symbol">A</div>
+      <div class="brand-name">ANDRONEX<span>STUDIO</span></div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="tag">THE ORIGINAL AI PROJECT</div>
+
+    <h1>Where it all <span>began.</span></h1>
+
+    <p>
+      Every ambitious idea has a starting point.
+      SouravAI was the original AI assistant project
+      that began the journey toward Andronex's
+      evolving vision for intelligent technology.
+    </p>
+
+    <div class="souravai-badge">
+      AN EXPERIMENT THAT STARTED A JOURNEY
+    </div>
+  </main>
+
+  <section class="souravai-section">
+    <h2>The Beginning of an Idea</h2>
+
+    <p>
+      SouravAI emerged from an interest in building
+      a personal AI assistant rather than simply
+      relying on existing applications.
+    </p>
+
+    <p>
+      Through experimentation with AI models,
+      conversational interfaces and different
+      development tools, the project became a
+      foundation for exploring more personalised
+      and capable AI experiences.
+    </p>
+  </section>
+
+  <section class="souravai-grid">
+    <article class="souravai-card">
+      <h3>💬 Conversational AI</h3>
+      <p>
+        Exploring natural conversations that help
+        users ask questions, understand concepts
+        and develop ideas.
+      </p>
+    </article>
+
+    <article class="souravai-card">
+      <h3>🧪 Experimentation</h3>
+      <p>
+        Testing AI models, prompts and integrations
+        to understand their strengths, limitations
+        and practical applications.
+      </p>
+    </article>
+
+    <article class="souravai-card">
+      <h3>🧠 Personalisation</h3>
+      <p>
+        Exploring the possibility of an assistant
+        that can adapt its responses to user
+        preferences and conversational context.
+      </p>
+    </article>
+
+    <article class="souravai-card">
+      <h3>🚀 A Foundation for Growth</h3>
+      <p>
+        Lessons from SouravAI helped shape the
+        broader vision behind the next generation
+        of Andronex AI development.
+      </p>
+    </article>
+  </section>
+
+  <section class="souravai-section project-connection">
+    <h2>From SouravAI to Orvyn</h2>
+
+    <p>
+      SouravAI represents the beginning of the
+      journey. Orvyn is the more ambitious
+      successor project, exploring a broader
+      combination of conversational intelligence,
+      personalisation, memory and research tools.
+    </p>
+
+    <p>
+      The two projects are connected by a shared
+      goal: exploring how AI can become a more
+      useful and accessible everyday assistant.
+    </p>
+
+    <div class="souravai-actions">
+      <a href="orvyn.html" class="btn">
+        Discover Orvyn →
+      </a>
+
+      <a href="products.html" class="btn">
+        Explore Our Projects
+      </a>
+    </div>
+  </section>
+
+  <section class="souravai-section">
+    <h2>Project Status</h2>
+
+    <p>
+      SouravAI is the original project in the
+      Andronex AI development journey. Its available
+      features depend on the current implementation.
+      Orvyn continues to develop the broader vision
+      that grew from this beginning.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Andronex Studio. All rights reserved.
+  </footer>
+
   <script src="script.js"></script>
-
-<header>
-  <a href="index.html" class="brand">
-    <div class="brand-symbol">A</div>
-    <div class="brand-name">ANDRONEX<span>STUDIO</span></div>
-  </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main class="hero">
-  <div class="tag">THE ORIGINAL PROJECT</div>
-  <h1>Where it all <span>began.</span></h1>
-  <p>
-    SouravAI was the first AI assistant project
-    that started the journey of Andronex Studio.
-  </p>
-  <div class="tag">ORIGINAL PROJECT</div>
-</main>
-
-<section class="about">
-  <h2>The Beginning of an Idea</h2>
-  <p>
-    Built through experimentation and curiosity,
-    SouravAI laid the foundation for the ideas
-    that eventually evolved into Orvyn.
-  </p>
-</section>
-
-<footer>© 2026 Andronex Studio.</footer>
-
 </body>
 </html>
