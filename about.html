@@ -1,239 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b14">
-  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050b15">
 
-  <meta
-    name="description"
-    content="Meet Sourav Narayan, founder of Andronex Studio, and discover the vision and journey behind SouravAI and Orvyn."
-  >
+  <meta name="description"
+    content="Meet Sourav Narayan, founder of Andronex Studio. Explore the vision, story and projects behind Orvyn AI, SouravAI and more.">
 
-  <title>Founder & Our Story | Andronex Studio</title>
-
+  <title>Founder | Andronex Studio</title>
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    .founder-page {
+      max-width: 1150px;
+      margin: auto;
+      padding: 35px 22px 60px;
+    }
+
     .founder-hero {
-      padding-top: 70px;
-      padding-bottom: 60px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 45px;
+      align-items: center;
+      padding: 55px 0;
     }
 
-    .founder-label {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid rgba(96, 165, 250, 0.3);
-      border-radius: 30px;
-      color: #93c5fd;
-      background: rgba(96, 165, 250, 0.07);
-      font-size: 11px;
+    .eyebrow {
+      color: #22d3ee;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .founder-hero h1 span {
-      color: #60a5fa;
-    }
-
-    .founder-description {
-      max-width: 700px;
-      margin: 22px auto;
-      color: #aab8cc;
-      line-height: 1.9;
-    }
-
-    .founder-section {
-      max-width: 950px;
-      margin: 55px auto;
-      padding: 28px;
-    }
-
-    .founder-section h2 {
       margin-bottom: 18px;
     }
 
-    .founder-section > p {
-      color: #aab8cc;
+    .founder-copy h1 {
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1.12;
+      margin: 0 0 22px;
+    }
+
+    .founder-copy h1 span,
+    .section-title span {
+      color: #38bdf8;
+    }
+
+    .founder-copy p,
+    .section-description {
+      color: #a9b8cc;
       line-height: 1.9;
     }
 
-    .founder-profile {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      align-items: center;
-      gap: 28px;
+    .skill-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .skill-tags span {
+      padding: 8px 15px;
+      border: 1px solid #164e70;
+      border-radius: 30px;
+      color: #bdefff;
+      font-size: 12px;
+    }
+
+    .portrait-wrap {
+      max-width: 370px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .founder-portrait {
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid #0891b2;
+      box-shadow: 0 0 40px #0891b21a;
+    }
+
+    .portrait-caption {
+      text-align: center;
+      color: #38bdf8;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-top: 16px;
+    }
+
+    .section-panel {
+      margin-top: 28px;
       padding: 30px;
-      border: 1px solid rgba(96, 165, 250, 0.2);
-      border-radius: 22px;
-      background: rgba(16, 23, 34, 0.85);
+      border: 1px solid #16334b;
+      border-radius: 20px;
+      background: rgba(7, 17, 31, .82);
     }
 
-    .founder-avatar {
+    .section-title {
+      font-size: 29px;
+      margin: 0 0 16px;
+    }
+
+    .about-grid {
       display: grid;
-      place-items: center;
-      width: 130px;
-      height: 130px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, #0e7490, #1d4ed8);
-      color: white;
-      font-size: 48px;
-      font-weight: 800;
-      box-shadow: 0 0 35px rgba(34, 211, 238, 0.13);
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
     }
 
-    .founder-profile h2 {
-      margin: 0 0 8px;
+    .qualities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    .founder-role {
+    .quality {
+      padding: 15px;
+      border: 1px solid #16334b;
+      border-radius: 14px;
+    }
+
+    .quality h3 {
       color: #67e8f9;
-      font-size: 13px;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+      font-size: 15px;
+      margin-top: 0;
     }
 
-    .founder-profile p {
-      color: #aab8cc;
-      line-height: 1.8;
+    .quality p {
+      color: #a9b8cc;
+      font-size: 13px;
+      line-height: 1.7;
       margin-bottom: 0;
     }
 
-    .founder-grid {
+    .timeline {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
       margin-top: 25px;
     }
 
-    .founder-card {
-      padding: 24px;
-      border: 1px solid rgba(96, 165, 250, 0.15);
-      border-radius: 18px;
-      background: rgba(16, 23, 34, 0.8);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    .founder-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(96, 165, 250, 0.55);
-    }
-
-    .founder-card h3 {
-      margin-top: 0;
-      color: #e5f3ff;
-    }
-
-    .founder-card p {
-      color: #aab8cc;
-      line-height: 1.8;
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-
-    .founder-timeline {
-      position: relative;
-      display: grid;
-      gap: 18px;
-      margin-top: 30px;
-    }
-
-    .founder-timeline-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 22px;
-      border: 1px solid rgba(96, 165, 250, 0.15);
-      border-radius: 18px;
-      background: rgba(16, 23, 34, 0.8);
+    .timeline-card {
+      padding: 20px 16px;
+      border: 1px solid #164e70;
+      border-radius: 15px;
+      background: #071321;
     }
 
     .timeline-number {
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(34, 211, 238, 0.1);
-      color: #67e8f9;
+      color: #22d3ee;
       font-weight: 800;
+      font-size: 22px;
     }
 
-    .founder-timeline-card h3 {
-      margin: 4px 0 9px;
+    .timeline-card h3 {
+      font-size: 16px;
     }
 
-    .founder-timeline-card p {
-      color: #aab8cc;
-      line-height: 1.8;
-      margin: 0;
+    .timeline-card p {
+      color: #a9b8cc;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
-    .founder-project-links {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
       margin-top: 25px;
     }
 
-    .founder-cta {
-      text-align: center;
-      border: 1px solid rgba(96, 165, 250, 0.2);
-      border-radius: 22px;
-      background: rgba(16, 23, 34, 0.8);
+    .project-card {
+      padding: 22px;
+      border: 1px solid #164e70;
+      border-radius: 16px;
+      background: #071321;
+      transition: transform .25s, border-color .25s;
     }
 
-    .founder-cta p {
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #22d3ee;
+    }
+
+    .project-icon {
+      font-size: 28px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #a9b8cc;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .project-card a {
+      color: #22d3ee;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .vision-banner {
+      text-align: center;
+      padding: 45px 25px;
+    }
+
+    .vision-banner p {
       max-width: 650px;
       margin: 15px auto 25px;
-      color: #aab8cc;
-      line-height: 1.9;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 750px) {
       .founder-hero {
-        padding-top: 40px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 35px 0;
       }
 
-      .founder-section {
-        margin: 30px auto;
+      .founder-copy {
+        text-align: center;
+      }
+
+      .skill-tags {
+        justify-content: center;
+      }
+
+      .portrait-wrap {
+        max-width: 320px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .founder-page {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .section-panel {
         padding: 20px 16px;
       }
 
-      .founder-profile {
+      .qualities,
+      .timeline {
         grid-template-columns: 1fr;
-        text-align: center;
-        justify-items: center;
-        padding: 25px 20px;
-      }
-
-      .founder-avatar {
-        width: 105px;
-        height: 105px;
-        font-size: 38px;
-      }
-
-      .founder-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .founder-timeline-card {
-        padding: 18px;
-        gap: 13px;
-      }
-
-      .founder-project-links .btn {
-        width: 100%;
-        text-align: center;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .founder-card {
+      .project-card {
         transition: none;
       }
     }
@@ -241,289 +271,214 @@
 </head>
 
 <body>
-
   <canvas id="neural-bg"></canvas>
 
-  <!-- HEADER -->
   <header>
     <a href="index.html" class="brand">
       <div class="brand-symbol">A</div>
-      <div class="brand-name">
-        ANDRONEX<span>STUDIO</span>
-      </div>
+      <div class="brand-name">ANDRONEX<span>STUDIO</span></div>
     </a>
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
       <a href="about.html">About</a>
+      <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <main class="hero founder-hero">
+  <main class="founder-page">
 
-    <div class="founder-label">
-      THE STORY BEHIND ANDRONEX
-    </div>
+    <section class="founder-hero">
+      <div class="founder-copy">
+        <div class="eyebrow">FOUNDER &amp; VISION</div>
 
-    <h1>
-      Ideas become reality.<br>
-      <span>One project at a time.</span>
-    </h1>
-
-    <p class="founder-description">
-      Andronex Studio is an independent technology
-      initiative founded by Sourav Narayan.
-
-      It began with a curiosity about technology
-      and a desire to build original digital products.
-      Today, that journey continues through AI
-      experimentation, software development and
-      new ideas.
-    </p>
-
-    <div class="tag">
-      BUILDING INTELLIGENCE. SHAPING TOMORROW.
-    </div>
-
-  </main>
-
-  <!-- FOUNDER PROFILE -->
-  <section class="founder-section">
-
-    <div class="founder-profile">
-
-      <div class="founder-avatar" aria-label="Sourav Narayan initials">
-        SN
-      </div>
-
-      <div>
-        <h2>Sourav Narayan</h2>
-
-        <div class="founder-role">
-          FOUNDER · ANDRONEX STUDIO
-        </div>
+        <h1>
+          The mind behind<br>
+          <span>Andronex Studio.</span>
+        </h1>
 
         <p>
-          A young technology enthusiast exploring
+          I'm Sourav Narayan, founder of Andronex Studio.
+          I'm a young technology enthusiast exploring
           artificial intelligence, software development
           and digital product creation.
 
-          Sourav founded Andronex Studio as a space
-          to experiment with ideas, learn through
-          building and gradually turn concepts into
-          working projects.
+          This is my journey of turning ideas into projects,
+          learning through experimentation and building
+          with the tools available to me.
         </p>
+
+        <div class="skill-tags">
+          <span>AI</span>
+          <span>Software</span>
+          <span>Gaming</span>
+          <span>Innovation</span>
+        </div>
       </div>
 
-    </div>
+      <div class="portrait-wrap">
+        <img
+          class="founder-portrait"
+          src="founder.jpg"
+          alt="Sourav Narayan, founder of Andronex Studio"
+          fetchpriority="high"
+        >
 
-  </section>
+        <div class="portrait-caption">
+          SOURAV NARAYAN · FOUNDER
+        </div>
+      </div>
+    </section>
 
-  <!-- FOUNDER'S APPROACH -->
-  <section class="founder-section">
-
-    <h2>A Builder's Mindset</h2>
-
-    <p>
-      Andronex Studio is built around a straightforward
-      principle: learn by creating.
-
-      Rather than waiting for perfect conditions,
-      the aim is to experiment with available tools,
-      solve practical problems and improve each
-      project through experience.
-    </p>
-
-    <div class="founder-grid">
-
-      <article class="founder-card">
-        <h3>01 · Curiosity</h3>
-
-        <p>
-          Exploring how AI, applications and digital
-          systems work, then asking how they could
-          be made more useful.
-        </p>
-      </article>
-
-      <article class="founder-card">
-        <h3>02 · Experimentation</h3>
-
-        <p>
-          Testing ideas, learning new tools and
-          understanding the strengths and limitations
-          of different technologies.
-        </p>
-      </article>
-
-      <article class="founder-card">
-        <h3>03 · Creation</h3>
-
-        <p>
-          Turning concepts into real projects,
-          interfaces and software experiences
-          that can be developed further.
-        </p>
-      </article>
-
-      <article class="founder-card">
-        <h3>04 · Continuous Learning</h3>
-
-        <p>
-          Treating every project as an opportunity
-          to improve technical skills, problem-solving
-          and product design.
-        </p>
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- VISION -->
-  <section class="founder-section">
-
-    <h2>The Vision of Andronex Studio</h2>
-
-    <p>
-      The long-term vision is to explore intelligent
-      technology and create useful digital products
-      that make advanced tools more approachable.
-    </p>
-
-    <p>
-      Artificial intelligence is an important part
-      of that journey, but the broader ambition
-      extends to software, creative technology
-      and other ideas worth exploring.
-    </p>
-
-    <p>
-      Andronex Studio is an independent initiative
-      that continues to evolve as its projects,
-      capabilities and experience grow.
-    </p>
-
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="founder-section">
-
-    <div class="tag">OUR JOURNEY</div>
-
-    <h2>From an idea to an evolving vision.</h2>
-
-    <div class="founder-timeline">
-
-      <article class="founder-timeline-card">
-
-        <div class="timeline-number">01</div>
-
+    <section class="section-panel">
+      <div class="about-grid">
         <div>
+          <h2 class="section-title">
+            About the <span>Founder</span>
+          </h2>
+
+          <p class="section-description">
+            Sourav is interested in the possibilities of AI,
+            independent software development and interactive
+            digital experiences.
+
+            From AI assistants to games and websites, each
+            project is an opportunity to experiment, solve
+            problems and keep learning.
+          </p>
+        </div>
+
+        <div class="qualities">
+          <article class="quality">
+            <h3>AI Enthusiast</h3>
+            <p>Exploring conversational AI and intelligent systems.</p>
+          </article>
+
+          <article class="quality">
+            <h3>Developer</h3>
+            <p>Building projects with accessible tools and code.</p>
+          </article>
+
+          <article class="quality">
+            <h3>Game Creator</h3>
+            <p>Exploring interactive experiences and game ideas.</p>
+          </article>
+
+          <article class="quality">
+            <h3>Lifelong Learner</h3>
+            <p>Learning, testing ideas and improving over time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-panel">
+      <div class="eyebrow">OUR JOURNEY</div>
+
+      <h2 class="section-title">
+        From an idea to <span>innovation.</span>
+      </h2>
+
+      <p class="section-description">
+        Every project is part of an ongoing journey
+        of exploration, experimentation and creation.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-card">
+          <div class="timeline-number">01</div>
           <h3>The Beginning</h3>
+          <p>An interest in technology grew into a desire to build original projects.</p>
+        </article>
 
-          <p>
-            An interest in technology developed into
-            the idea of building original digital
-            projects independently.
-          </p>
-        </div>
-
-      </article>
-
-      <article class="founder-timeline-card">
-
-        <div class="timeline-number">02</div>
-
-        <div>
+        <article class="timeline-card">
+          <div class="timeline-number">02</div>
           <h3>SouravAI</h3>
+          <p>The original AI assistant project that started the journey.</p>
+        </article>
 
-          <p>
-            The original AI assistant project.
-            Experimentation with conversational AI
-            became the foundation for future ideas.
-          </p>
-        </div>
-
-      </article>
-
-      <article class="founder-timeline-card">
-
-        <div class="timeline-number">03</div>
-
-        <div>
+        <article class="timeline-card">
+          <div class="timeline-number">03</div>
           <h3>Orvyn</h3>
+          <p>A more ambitious AI assistant exploring memory, research and personalisation.</p>
+        </article>
 
-          <p>
-            The vision expanded into a more ambitious
-            AI assistant project exploring
-            personalisation, memory, research
-            and multi-model capabilities.
-          </p>
-        </div>
-
-      </article>
-
-      <article class="founder-timeline-card">
-
-        <div class="timeline-number">04</div>
-
-        <div>
+        <article class="timeline-card">
+          <div class="timeline-number">04</div>
           <h3>The Future</h3>
+          <p>Exploring intelligent software, games and new digital experiences.</p>
+        </article>
+      </div>
+    </section>
 
+    <section class="section-panel">
+      <div class="eyebrow">OUR PROJECTS</div>
+
+      <h2 class="section-title">
+        Ideas in <span>action.</span>
+      </h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-icon">✦</div>
+          <h3>Orvyn AI</h3>
           <p>
-            Continuing to develop existing projects,
-            explore new technologies and turn
-            promising ideas into practical software.
+            The flagship AI assistant project, exploring
+            conversational intelligence, research and personalisation.
           </p>
-        </div>
+          <a href="orvyn.html">Explore Orvyn →</a>
+        </article>
 
-      </article>
+        <article class="project-card">
+          <div class="project-icon">◈</div>
+          <h3>SouravAI</h3>
+          <p>
+            The original AI assistant project that laid
+            the foundation for the journey.
+          </p>
+          <a href="souravai.html">Explore SouravAI →</a>
+        </article>
 
-    </div>
+        <article class="project-card">
+          <div class="project-icon">🎮</div>
+          <h3>Five Nights Horror</h3>
+          <p>
+            An independent horror game project inspired
+            by animatronic survival games.
+          </p>
+          <a href="products.html">View Projects →</a>
+        </article>
+      </div>
+    </section>
 
-    <div class="founder-project-links">
+    <section class="section-panel vision-banner">
+      <div class="eyebrow">THE BIGGER PICTURE</div>
 
-      <a href="souravai.html" class="btn">
-        Explore SouravAI →
+      <h2 class="section-title">
+        More than just <span>projects.</span>
+      </h2>
+
+      <p class="section-description">
+        Andronex Studio is a growing independent initiative
+        focused on exploring technology, learning through
+        creation and developing ideas into meaningful
+        digital experiences.
+
+        The journey is ongoing, and there's still a lot to build.
+      </p>
+
+      <a href="products.html" class="btn">
+        Explore Our Projects →
       </a>
+    </section>
 
-      <a href="orvyn.html" class="btn">
-        Discover Orvyn →
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- CLOSING -->
-  <section class="founder-section founder-cta">
-
-    <h2>The Journey Is Still Being Built.</h2>
-
-    <p>
-      Andronex Studio is not defined by a single
-      product. It is defined by the ongoing process
-      of learning, experimenting and creating.
-
-      Every project is another step toward
-      a bigger vision.
-    </p>
-
-    <a href="products.html" class="btn">
-      Explore Our Projects →
-    </a>
-
-  </section>
+  </main>
 
   <footer>
     © 2026 Andronex Studio. All rights reserved.
   </footer>
 
   <script src="script.js"></script>
-
 </body>
-  </html>
+</html>
