@@ -1,234 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b14">
-  <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b18">
 
-  <meta name="description" content="Discover Andronex Studio projects: Orvyn AI, SouravAI and Five Nights Horror.">
+    <title>Products | Andronex Studio</title>
 
-  <title>Our Products | Andronex Studio</title>
-  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 
-  <style>
-    .products-intro {
-      max-width: 750px;
-      margin: auto;
-      padding: 35px 20px;
-      text-align: center;
-    }
+    <style>
+        .products-section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 20px;
+        }
 
-    .products-grid {
-      max-width: 1100px;
-      margin: 30px auto 70px;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
+        .products-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .product-card {
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      border: 1px solid #1e3a56;
-      border-radius: 20px;
-      background: rgba(12, 20, 34, .94);
-      transition: transform .25s, border-color .25s;
-    }
+        .products-heading h1 {
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            color: #ffffff;
+        }
 
-    .product-card:hover {
-      transform: translateY(-5px);
-      border-color: #22d3ee;
-    }
+        .products-heading p {
+            color: #aab4d0;
+            margin-top: 12px;
+        }
 
-    .product-icon {
-      font-size: 35px;
-      margin-bottom: 18px;
-    }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(100%, 280px), 1fr)
+            );
+            gap: 24px;
+        }
 
-    .product-card h2 {
-      font-size: 23px;
-      margin: 14px 0;
-    }
+        .product-card {
+            background: linear-gradient(
+                145deg,
+                #121a30,
+                #090d1b
+            );
+            border: 1px solid #263656;
+            border-radius: 18px;
+            padding: 25px;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .product-card p {
-      color: #a9b8cc;
-      font-size: 14px;
-      line-height: 1.8;
-    }
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: #3984ff;
+            box-shadow: 0 10px 35px #1677ff18;
+        }
 
-    .product-card .status {
-      color: #67e8f9;
-      font-size: 12px;
-      margin-top: auto;
-      padding-top: 12px;
-    }
+        .product-icon {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
 
-    .product-card .btn {
-      margin-top: 12px;
-      text-decoration: none;
-    }
+        .product-tag {
+            color: #65a5ff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
 
-    .game-card {
-      background: linear-gradient(
-        150deg,
-        rgba(100, 20, 40, .25),
-        rgba(12, 20, 34, .96) 65%
-      );
-      border-color: #613044;
-    }
+        .product-card h2 {
+            color: #ffffff;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
 
-    .game-card:hover {
-      border-color: #fb7185;
-    }
+        .product-card p {
+            color: #b3bdd4;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
 
-    .game-card .status {
-      color: #fda4af;
-    }
+        .product-status {
+            color: #7fffb2 !important;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: auto;
+        }
 
-    .project-note {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-      color: #91a4bb;
-      font-size: 13px;
-      line-height: 1.8;
-    }
+        .product-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #2878ff;
+            color: #ffffff;
+            padding: 13px 16px;
+            border-radius: 10px;
+            margin-top: 12px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
-    @media (max-width: 850px) {
-      .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
+        .product-btn:hover {
+            background: #5594ff;
+            transform: scale(1.02);
+        }
 
-    @media (max-width: 560px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-        padding: 0 16px;
-      }
-    }
+        .secondary-btn {
+            background: transparent;
+            border: 1px solid #3984ff;
+        }
 
-    @media (prefers-reduced-motion: reduce) {
-      .product-card {
-        transition: none;
-      }
-    }
-  </style>
+        .secondary-btn:hover {
+            background: #14284b;
+        }
+
+        .download-note {
+            color: #8997b5;
+            font-size: 12px;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
 <body>
-  <canvas id="neural-bg"></canvas>
 
-  <header>
-    <a href="index.html" class="brand">
-      <div class="brand-symbol">A</div>
-      <div class="brand-name">
-        ANDRONEX<span>STUDIO</span>
-      </div>
-    </a>
+    <canvas id="neural-bg"></canvas>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">ANDRONEX<span> STUDIO</span></div>
 
-  <main class="hero products-intro">
-    <div class="tag">ANDRONEX INNOVATIONS</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <h1>Ideas into <span>Reality.</span></h1>
+    <main class="products-section">
 
-    <p>
-      Artificial intelligence, original software and
-      interactive experiences. Every project starts
-      with curiosity.
-    </p>
-  </main>
+        <div class="products-heading">
+            <h1>Our Projects</h1>
+            <p>
+                Ideas transformed into technology.
+                Explore the projects built by Andronex Studio.
+            </p>
+        </div>
 
-  <section class="products-grid">
+        <div class="products-grid">
 
-    <!-- ORVYN -->
-    <article class="product-card">
-      <div class="product-icon">✦</div>
+            <!-- ORVYN -->
+            <article class="product-card">
+                <div class="product-icon">🤖</div>
 
-      <div class="tag">FLAGSHIP PROJECT</div>
+                <div class="product-tag">ARTIFICIAL INTELLIGENCE</div>
 
-      <h2>ORVYN AI</h2>
+                <h2>ORVYN</h2>
 
-      <p>
-        An ambitious AI assistant exploring conversational
-        intelligence, persistent memory, web research
-        and creative tools.
-      </p>
+                <p>
+                    An AI assistant project focused on intelligent
+                    conversations, personalised assistance,
+                    research and creativity.
+                </p>
 
-      <p class="status">Status: In Development</p>
+                <p class="product-status">
+                    ● AI ASSISTANT PROJECT
+                </p>
 
-      <a class="btn" href="orvyn.html">
-        Explore Orvyn →
-      </a>
-    </article>
+                <a href="orvyn.html" class="product-btn">
+                    Explore Orvyn →
+                </a>
+            </article>
 
-    <!-- SOURAVAI -->
-    <article class="product-card">
-      <div class="product-icon">◈</div>
+            <!-- SOURAVAI -->
+            <article class="product-card">
+                <div class="product-icon">🧠</div>
 
-      <div class="tag">THE BEGINNING</div>
+                <div class="product-tag">ORIGINAL AI PROJECT</div>
 
-      <h2>SOURAVAI</h2>
+                <h2>SOURAVAI</h2>
 
-      <p>
-        The original AI assistant project that began
-        the journey towards building intelligent
-        technology at Andronex Studio.
-      </p>
+                <p>
+                    The original AI assistant project that began
+                    the journey toward building more capable
+                    and personalised AI systems.
+                </p>
 
-      <p class="status">Status: Original Project</p>
+                <p class="product-status">
+                    ● ORIGINAL PROJECT
+                </p>
 
-      <a class="btn" href="souravai.html">
-        Explore SouravAI →
-      </a>
-    </article>
+                <a href="souravai.html" class="product-btn">
+                    Explore SouravAI →
+                </a>
+            </article>
 
-    <!-- FIVE NIGHTS HORROR -->
-    <article class="product-card game-card">
-      <div class="product-icon">🎮</div>
+            <!-- FIVE NIGHTS HORROR -->
+            <article class="product-card">
+                <div class="product-icon">🎮</div>
 
-      <div class="tag">GAMING PROJECT</div>
+                <div class="product-tag">GAMING PROJECT</div>
 
-      <h2>FIVE NIGHTS HORROR</h2>
+                <h2>FIVE NIGHTS HORROR</h2>
 
-      <p>
-        An independent horror game inspired by
-        animatronic survival games. Enter a mysterious
-        environment where atmosphere, observation
-        and strategy are essential.
-      </p>
+                <p>
+                    An independent horror game developed as
+                    part of the Andronex Studio project lineup.
+                    Enter the game and face the unknown.
+                </p>
 
-      <p class="status">Status: In Development</p>
+                <p class="product-status">
+                    ● GAME APP CREATED
+                </p>
 
-      <a class="btn" href="fnap.html">
-        Enter the Game →
-      </a>
-    </article>
+                <a href="fnap.html" class="product-btn">
+                    Explore the Game →
+                </a>
 
-  </section>
+                <!-- Replace # with the actual APK download URL -->
+                <a
+                    href="#"
+                    class="product-btn secondary-btn"
+                    onclick="alert('Add your APK download link to enable downloading.'); return false;"
+                >
+                    Download APK ↓
+                </a>
 
-  <div class="project-note">
-    Andronex Studio is an independent technology initiative.
-    Project descriptions represent development goals;
-    availability and features may change as development continues.
-  </div>
+                <div class="download-note">
+                    Android application. Download availability
+                    depends on the APK hosting link.
+                </div>
+            </article>
 
-  <footer>
-    © 2026 Andronex Studio. All rights reserved.
-  </footer>
+        </div>
+    </main>
 
-  <script src="script.js"></script>
+    <footer>
+        <p>© 2026 Andronex Studio. Building Intelligence. Shaping Tomorrow.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
