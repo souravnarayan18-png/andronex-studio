@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b18">
+
+    <title>Securery | Andronex Studio</title>
+
+    <meta name="description"
+          content="Discover Securery by Andronex Studio. A personal space for visual discovery, organised collections and private media storage.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            background: #080b18;
+            color: #f5f8ff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #neural-bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .securery-container {
+            width: min(1120px, 100%);
+            margin: auto;
+            padding: 0 22px;
+        }
+
+        /* HERO */
+
+        .sec-hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 0 90px;
+        }
+
+        .sec-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 15px;
+            border: 1px solid #24505a;
+            border-radius: 30px;
+            background: rgba(16, 44, 53, 0.65);
+            color: #73e6d8;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .sec-logo {
+            width: 86px;
+            height: 86px;
+            margin: 30px auto 22px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #27626b;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #173c47, #101a2c);
+            box-shadow: 0 0 45px rgba(53, 214, 196, 0.09);
+            font-size: 43px;
+        }
+
+        .sec-hero h1 {
+            margin: 0;
+            font-size: clamp(43px, 9vw, 82px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .sec-hero h1 span {
+            color: #55dfd0;
+        }
+
+        .sec-tagline {
+            margin: 22px 0 12px;
+            color: #dce8f6;
+            font-size: clamp(17px, 3vw, 22px);
+        }
+
+        .sec-intro {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #aab8d0;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .sec-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .sec-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 48px;
+            padding: 13px 21px;
+            border: 1px solid #147d80;
+            border-radius: 11px;
+            background: #147d80;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.25s;
+        }
+
+        .sec-btn:hover {
+            background: #199a9c;
+            border-color: #199a9c;
+            transform: translateY(-2px);
+        }
+
+        .sec-btn.secondary {
+            background: rgba(12, 20, 37, 0.75);
+            border-color: #34465f;
+        }
+
+        .sec-btn.secondary:hover {
+            background: #17253a;
+            border-color: #55dfd0;
+        }
+
+        .sec-access-note {
+            margin-top: 22px;
+            color: #7f91ad;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* SECTION HEADINGS */
+
+        .sec-section {
+            padding: 65px 0;
+        }
+
+        .sec-section-heading {
+            max-width: 680px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .sec-eyebrow {
+            color: #55dfd0;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .sec-section-heading h2 {
+            margin: 15px 0;
+            font-size: clamp(28px, 5vw, 43px);
+            line-height: 1.2;
+        }
+
+        .sec-section-heading p {
+            color: #aab8d0;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* FEATURE CARDS */
+
+        .sec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .sec-card {
+            padding: 25px;
+            border: 1px solid #24374b;
+            border-radius: 18px;
+            background: linear-gradient(
+                145deg,
+                rgba(18, 39, 51, 0.94),
+                rgba(10, 15, 29, 0.96)
+            );
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .sec-card:hover {
+            transform: translateY(-4px);
+            border-color: #287d83;
+        }
+
+        .sec-card-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            background: #16353e;
+            font-size: 26px;
+        }
+
+        .sec-card h3 {
+            margin: 0 0 12px;
+            font-size: 19px;
+        }
+
+        .sec-card p {
+            margin: 0;
+            color: #aab8d0;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* FEATURE SPOTLIGHT */
+
+        .sec-spotlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 35px;
+            padding: 34px;
+            border: 1px solid #24374b;
+            border-radius: 22px;
+            background: linear-gradient(
+                120deg,
+                rgba(17, 43, 52, 0.95),
+                rgba(11, 16, 32, 0.97)
+            );
+        }
+
+        .sec-spotlight h2 {
+            margin: 15px 0;
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.2;
+        }
+
+        .sec-spotlight p {
+            color: #aab8d0;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .sec-list {
+            padding: 0;
+            margin: 22px 0 0;
+            list-style: none;
+        }
+
+        .sec-list li {
+            display: flex;
+            gap: 11px;
+            margin: 13px 0;
+            color: #d6e2f1;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .sec-check {
+            flex-shrink: 0;
+            color: #55dfd0;
+            font-weight: bold;
+        }
+
+        .sec-visual {
+            display: grid;
+            gap: 13px;
+        }
+
+        .sec-visual-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px;
+            border: 1px solid #2b4657;
+            border-radius: 14px;
+            background: rgba(8, 16, 30, 0.82);
+        }
+
+        .sec-visual-item .visual-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #16353e;
+            font-size: 22px;
+        }
+
+        .sec-visual-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .sec-visual-item small {
+            color: #91a3bd;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* HOW IT WORKS */
+
+        .sec-steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            counter-reset: steps;
+        }
+
+        .sec-step {
+            counter-increment: steps;
+            padding: 24px;
+            border-top: 2px solid #287d83;
+            border-radius: 0 0 15px 15px;
+            background: rgba(15, 24, 41, 0.85);
+        }
+
+        .sec-step::before {
+            content: "0" counter(steps);
+            display: block;
+            margin-bottom: 19px;
+            color: #55dfd0;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .sec-step h3 {
+            margin: 0 0 11px;
+            font-size: 18px;
+        }
+
+        .sec-step p {
+            margin: 0;
+            color: #aab8d0;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* PRIVACY */
+
+        .sec-privacy {
+            padding: 32px;
+            border: 1px solid #24505a;
+            border-radius: 20px;
+            background: linear-gradient(
+                140deg,
+                rgba(15, 40, 47, 0.95),
+                rgba(10, 16, 30, 0.97)
+            );
+        }
+
+        .sec-privacy h2 {
+            margin: 14px 0;
+            font-size: clamp(25px, 4vw, 35px);
+        }
+
+        .sec-privacy > p {
+            max-width: 750px;
+            color: #aab8d0;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .sec-privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .sec-privacy-item {
+            padding: 18px;
+            border: 1px solid #29404d;
+            border-radius: 13px;
+            background: rgba(8, 16, 30, 0.65);
+        }
+
+        .sec-privacy-item strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .sec-privacy-item p {
+            margin: 0;
+            color: #aab8d0;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .sec-disclaimer {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid #29404d;
+            color: #8295ae;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* FINAL CTA */
+
+        .sec-final {
+            padding: 75px 0 90px;
+            text-align: center;
+        }
+
+        .sec-final h2 {
+            margin: 15px 0;
+            font-size: clamp(29px, 6vw, 45px);
+        }
+
+        .sec-final p {
+            max-width: 580px;
+            margin: 0 auto;
+            color: #aab8d0;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .sec-footer {
+            padding: 27px 15px;
+            border-top: 1px solid #202a40;
+            text-align: center;
+            color: #8492ad;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .sec-footer a {
+            color: #8edfd8;
+            text-decoration: none;
+        }
+
+        .sec-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .sec-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sec-spotlight {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .sec-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .sec-section {
+                padding: 48px 0;
+            }
+
+            .sec-hero {
+                padding: 75px 0 60px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .securery-container {
+                padding: 0 16px;
+            }
+
+            .sec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sec-privacy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sec-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .sec-logo {
+                width: 75px;
+                height: 75px;
+                font-size: 36px;
+            }
+
+            .sec-privacy {
+                padding: 23px;
+            }
+
+            .sec-actions {
+                flex-direction: column;
+            }
+
+            .sec-btn {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="neural-bg" aria-hidden="true"></canvas>
+
+    <header>
+        <div class="logo">ANDRONEX<span> STUDIO</span></div>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="sec-hero">
+            <div class="securery-container">
+
+                <span class="sec-badge">
+                    ANDRONEX PRODUCT
+                </span>
+
+                <div class="sec-logo" aria-hidden="true">
+                    🔐
+                </div>
+
+                <h1>Meet <span>Securery.</span></h1>
+
+                <p class="sec-tagline">
+                    Your interests. Your collections. Your private space.
+                </p>
+
+                <p class="sec-intro">
+                    Discover visual inspiration, organise the things
+                    you love and keep your personal media in one
+                    thoughtfully designed space. Securery brings
+                    visual discovery and private storage together.
+                </p>
+
+                <div class="sec-actions">
+                    <a href="#features" class="sec-btn">
+                        Explore Features ↓
+                    </a>
+
+                    <a href="products.html" class="sec-btn secondary">
+                        ← All Products
+                    </a>
+                </div>
+
+                <p class="sec-access-note">
+                    Personal media and visual discovery, designed
+                    with privacy in mind.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+
+        <section class="sec-section" id="features">
+            <div class="securery-container">
+
+                <div class="sec-section-heading">
+                    <span class="sec-eyebrow">ONE APP. MULTIPLE POSSIBILITIES.</span>
+
+                    <h2>Everything Worth Keeping.</h2>
+
+                    <p>
+                        From the inspiration you discover online to
+                        the photos and documents you want to organise,
+                        Securery is designed to bring your digital
+                        collections together.
+                    </p>
+                </div>
+
+                <div class="sec-grid">
+
+                    <article class="sec-card">
+                        <div class="sec-card-icon">🌌</div>
+
+                        <h3>Visual Discovery</h3>
+
+                        <p>
+                            Explore photography, artwork, wallpapers
+                            and other visual content through supported
+                            online discovery providers.
+                        </p>
+                    </article>
+
+                    <article class="sec-card">
+                        <div class="sec-card-icon">🔒</div>
+
+                        <h3>Private Vault</h3>
+
+                        <p>
+                            Keep personal photos, videos and documents
+                            in a separate private area designed for
+                            protected local storage.
+                        </p>
+                    </article>
+
+                    <article class="sec-card">
+                        <div class="sec-card-icon">📚</div>
+
+                        <h3>Personal Collections</h3>
+
+                        <p>
+                            Organise saved inspiration into collections
+                            based on your interests, projects and
+                            favourite subjects.
+                        </p>
+                    </article>
+
+                    <article class="sec-card">
+                        <div class="sec-card-icon">🎯</div>
+
+                        <h3>Interest-Based Feed</h3>
+
+                        <p>
+                            Discover content around your selected
+                            interests, with personalisation designed
+                            to be adjustable.
+                        </p>
+                    </article>
+
+                    <article class="sec-card">
+                        <div class="sec-card-icon">📱</div>
+
+                        <h3>Mobile-First Experience</h3>
+
+                        <p>
+                            A layout designed for smaller screens,
+                            comfortable navigation and convenient
+                            everyday use on mobile devices.
+                        </p>
+                    </article>
+
+                    <article class="sec-card">
+                        <div class="sec-card-icon">⚡</div>
+
+                        <h3>Local-First Access</h3>
+
+                        <p>
+                            Imported media and supported local
+                            collections can remain available without
+                            a continuous internet connection.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VAULT SPOTLIGHT -->
+
+        <section class="sec-section">
+            <div class="securery-container">
+
+                <div class="sec-spotlight">
+
+                    <div>
+                        <span class="sec-eyebrow">
+                            YOUR SPACE, YOUR CONTROL
+                        </span>
+
+                        <h2>
+                            Keep Personal Media
+                            <span style="color:#55dfd0;">Separate.</span>
+                        </h2>
+
+                        <p>
+                            Your private files deserve a different
+                            experience from your public inspiration
+                            feed. Securery is designed to keep these
+                            areas separate, helping you organise
+                            personal media without mixing it into
+                            public discovery.
+                        </p>
+
+                        <ul class="sec-list">
+                            <li>
+                                <span class="sec-check">✓</span>
+                                <span>Separate private vault and discovery areas</span>
+                            </li>
+
+                            <li>
+                                <span class="sec-check">✓</span>
+                                <span>Support for photos, videos and documents</span>
+                            </li>
+
+                            <li>
+                                <span class="sec-check">✓</span>
+                                <span>Collections organised around your needs</span>
+                            </li>
+
+                            <li>
+                                <span class="sec-check">✓</span>
+                                <span>Privacy-conscious handling of personal files</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sec-visual">
+
+                        <div class="sec-visual-item">
+                            <div class="visual-icon">🖼️</div>
+
+                            <div>
+                                <strong>Personal Media</strong>
+                                <small>Photos, videos and documents</small>
+                            </div>
+                        </div>
+
+                        <div class="sec-visual-item">
+                            <div class="visual-icon">🗂️</div>
+
+                            <div>
+                                <strong>Organised Collections</strong>
+                                <small>Your interests, arranged your way</small>
+                            </div>
+                        </div>
+
+                        <div class="sec-visual-item">
+                            <div class="visual-icon">🛡️</div>
+
+                            <div>
+                                <strong>Private Vault</strong>
+                                <small>A separate space for personal media</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+
+        <section class="sec-section">
+            <div class="securery-container">
+
+                <div class="sec-section-heading">
+                    <span class="sec-eyebrow">A SIMPLER WAY TO ORGANISE</span>
+
+                    <h2>Make Your Digital Space Yours.</h2>
+
+                    <p>
+                        A simple approach to discovering content,
+                        saving inspiration and organising your
+                        personal media.
+                    </p>
+                </div>
+
+                <div class="sec-steps">
+
+                    <article class="sec-step">
+                        <h3>Discover</h3>
+
+                        <p>
+                            Explore available visual content and
+                            choose the topics that interest you.
+                        </p>
+                    </article>
+
+                    <article class="sec-step">
+                        <h3>Collect</h3>
+
+                        <p>
+                            Save content into organised collections
+                            so your favourite ideas are easier to find.
+                        </p>
+                    </article>
+
+                    <article class="sec-step">
+                        <h3>Protect</h3>
+
+                        <p>
+                            Import personal media into the private
+                            vault when its storage and security
+                            features are available in your app build.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY -->
+
+        <section class="sec-section">
+            <div class="securery-container">
+
+                <div class="sec-privacy">
+
+                    <span class="sec-eyebrow">
+                        PRIVACY BY DESIGN
+                    </span>
+
+                    <h2>Your Personal Files Aren't Public Content.</h2>
+
+                    <p>
+                        Securery's product vision separates private
+                        media from online discovery. Security depends
+                        on the implementation of storage, encryption,
+                        authentication and network permissions in
+                        the actual application.
+                    </p>
+
+                    <div class="sec-privacy-grid">
+
+                        <div class="sec-privacy-item">
+                            <strong>🔐 Private Storage</strong>
+
+                            <p>
+                                Private media should be stored separately
+                                from publicly discoverable content, with
+                                appropriate access controls.
+                            </p>
+                        </div>
+
+                        <div class="sec-privacy-item">
+                            <strong>🔑 Protected Access</strong>
+
+                            <p>
+                                The application should protect access
+                                to the vault using properly implemented
+                                authentication and key management.
+                            </p>
+                        </div>
+
+                        <div class="sec-privacy-item">
+                            <strong>🌐 Controlled Connectivity</strong>
+
+                            <p>
+                                Private media should never be uploaded
+                                to external services without explicit,
+                                informed user consent.
+                            </p>
+                        </div>
+
+                        <div class="sec-privacy-item">
+                            <strong>⚙️ User Control</strong>
+
+                            <p>
+                                Users should be able to manage their
+                                collections and personalisation
+                                preferences.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p class="sec-disclaimer">
+                        Security note: These statements describe the
+                        intended design principles, not an independent
+                        security certification. Actual protection depends
+                        on the shipped application's verified
+                        implementation and the device's security.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+
+        <section class="sec-final">
+            <div class="securery-container">
+
+                <span class="sec-eyebrow">
+                    BUILT BY ANDRONEX STUDIO
+                </span>
+
+                <h2>
+                    Save What Inspires You.
+                    <br>
+                    Protect What Matters.
+                </h2>
+
+                <p>
+                    Securery brings visual inspiration, personal
+                    organisation and privacy-conscious media
+                    storage into one product vision.
+                </p>
+
+                <div class="sec-actions">
+                    <a href="products.html" class="sec-btn">
+                        Explore All Products →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="sec-footer">
+        <p><strong>SECURERY</strong> · An Andronex Studio Product</p>
+
+        <p>
+            <a href="index.html">Home</a>
+            &nbsp;·&nbsp;
+            <a href="about.html">About</a>
+            &nbsp;·&nbsp;
+            <a href="products.html">Products</a>
+            &nbsp;·&nbsp;
+            <a href="contact.html">Contact</a>
+        </p>
+
+        <p>Building Intelligence. Shaping Tomorrow.</p>
+
+        <p>© 2026 Andronex Studio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
