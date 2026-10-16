@@ -562,7 +562,56 @@ a:focus-visible {
         padding: 30px 20px;
     }
 }
+/* ANDRONEX STUDIO BRANDING */
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.brand-name span {
+  display: block;
+  color: #00bfff;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+@media (max-width: 600px) {
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .brand-name span {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+}
 
 
 
