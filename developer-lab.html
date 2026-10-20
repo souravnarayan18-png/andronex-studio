@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="Explore free developer tools by Andronex Studio. Format JSON, compare text, encode Base64 and build prompts.">
+
+<title>Developer Lab | Andronex Studio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #070b14;
+  --panel: rgba(15, 23, 42, .78);
+  --blue: #60a5fa;
+  --muted: #9aabc0;
+  --border: rgba(96, 165, 250, .2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 10%, #12335b55, transparent 45%),
+    var(--bg);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 20px 7%;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 11, 20, .8);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-name span {
+  display: block;
+  margin-top: 4px;
+  color: var(--blue);
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #bdc9da;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--blue);
+}
+
+.hero {
+  padding: 75px 7% 45px;
+  text-align: center;
+}
+
+.tag {
+  color: var(--blue);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 22px 0 15px;
+  font-size: clamp(36px, 7vw, 64px);
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: var(--blue);
+  text-shadow: 0 0 25px #3b82f655;
+}
+
+.hero p {
+  max-width: 550px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.search-wrap {
+  max-width: 520px;
+  margin: 30px auto 0;
+}
+
+#search {
+  width: 100%;
+  padding: 16px;
+  color: white;
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+#search:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 20px #3b82f622;
+}
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 22px 70px;
+}
+
+.section-title {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.section-subtitle {
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  min-width: 0;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: 0 12px 30px #0050ff15;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #2563eb18;
+  font-size: 23px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  min-height: 48px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.open-btn,
+.action-btn {
+  display: inline-block;
+  padding: 11px 15px;
+  border: 1px solid #3b82f6;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.open-btn:hover,
+.action-btn:hover {
+  background: #3b82f6;
+}
+
+.tool-panel {
+  display: none;
+  margin-top: 30px;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.tool-panel.show {
+  display: block;
+}
+
+.tool-panel h2 {
+  margin-bottom: 10px;
+}
+
+.tool-panel > p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+textarea,
+.output,
+input[type="text"] {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  padding: 14px;
+  background: #070b14;
+  border: 1px solid #263750;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font: 14px/1.6 monospace;
+  resize: vertical;
+}
+
+input[type="text"] {
+  min-height: 0;
+  margin-bottom: 12px;
+}
+
+textarea:focus,
+input:focus {
+  outline: 1px solid var(--blue);
+}
+
+.output {
+  margin-top: 15px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.secondary {
+  background: transparent;
+  border-color: #334155;
+}
+
+.status {
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  display: none;
+  padding: 20px 0;
+  color: var(--muted);
+}
+
+footer {
+  padding: 25px 7%;
+  border-top: 1px solid var(--border);
+  color: #71839a;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .hero {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .tool-panel {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="index.html">
+    <img src="andronex-logo.png" alt="Andronex Studio logo"
+         onerror="this.style.display='none'">
+    <div class="brand-name">
+      ANDRONEX
+      <span>STUDIO</span>
+    </div>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="developer-lab.html" class="active">Developer Lab</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="tag">ANDRONEX STUDIO PRESENTS</div>
+    <h1>Developer <span>Lab.</span></h1>
+    <p>
+      A collection of free, browser-based tools for developers,
+      creators and curious minds. No paid API required for these
+      core utilities.
+    </p>
+
+    <div class="search-wrap">
+      <input id="search" type="text"
+             placeholder="Search tools... e.g. JSON"
+             aria-label="Search developer tools">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Developer Toolkit</h2>
+    <p class="section-subtitle">
+      Six useful tools. Simple interfaces. Practical results.
+    </p>
+
+    <div class="grid" id="toolGrid">
+
+      <article class="card" data-search="json formatter validate minify">
+        <div class="icon">🧩</div>
+        <h3>JSON Formatter</h3>
+        <p>Format, validate and minify JSON data instantly.</p>
+        <button class="open-btn" onclick="openTool('json')">Open Tool →</button>
+      </article>
+
+      <article class="card" data-search="base64 encoder decoder text">
+        <div class="icon">🔐</div>
+        <h3>Base64 Converter</h3>
+        <p>Encode text into Base64 or decode Base64 into text.</p>
+        <button class="open-btn" onclick="openTool('base64')">Open Tool →</button>
+      </article>
+
+      <article class="card" data-search="text diff compare difference">
+        <div class="icon">🔀</div>
+        <h3>Text Diff</h3>
+        <p>Compare two text blocks and identify changed lines.</p>
+        <button class="open-btn" onclick="openTool('diff')">Open Tool →</button>
+      </article>
+
+      <article class="card" data-search="markdown preview editor">
+        <div class="icon">📝</div>
+        <h3>Markdown Previewer</h3>
+        <p>Preview basic Markdown formatting as you type.</p>
+        <button class="open-btn" onclick="openTool('markdown')">Open Tool →</button>
+      </article>
+
+      <article class="card" data-search="html css playground editor preview">
+        <div class="icon">💻</div>
+        <h3>HTML Playground</h3>
+        <p>Write HTML and CSS and preview your result locally.</p>
+        <button class="open-btn" onclick="openTool('html')">Open Tool →</button>
+      </article>
+
+      <article class="card" data-search="prompt builder ai prompt generator">
+        <div class="icon">✨</div>
+        <h3>Prompt Builder</h3>
+        <p>Create a structured prompt for your next AI task.</p>
+        <button class="open-btn" onclick="openTool('prompt')">Open Tool →</button>
+      </article>
+
+    </div>
+
+    <p class="empty" id="empty">No matching tools found.</p>
+
+    <section class="tool-panel" id="toolPanel" aria-live="polite">
+      <h2 id="toolTitle">Tool</h2>
+      <p id="toolDescription"></p>
+
+      <div id="toolInputs"></div>
+
+      <div class="actions" id="toolActions"></div>
+      <div class="output" id="toolOutput" hidden></div>
+      <p class="status" id="toolStatus" role="status"></p>
+    </section>
+  </section>
+</main>
+
+<footer>
+  © 2026 Andronex Studio. All rights reserved.<br>
+  Independent tools. Processed locally in your browser where possible.<br>
+  <a href="index.html">Return to Andronex Studio</a>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+let currentTool = "";
+
+$("search").addEventListener("input", function () {
+  const query = this.value.toLowerCase().trim();
+  let visible = 0;
+
+  document.querySelectorAll(".card").forEach(card => {
+    const match = (card.innerText + " " + card.dataset.search)
+      .toLowerCase().includes(query);
+
+    card.style.display = match ? "" : "none";
+    if (match) visible++;
+  });
+
+  $("empty").style.display = visible ? "none" : "block";
+});
+
+function openTool(name) {
+  currentTool = name;
+
+  const panel = $("toolPanel");
+  const inputs = $("toolInputs");
+  const actions = $("toolActions");
+  const output = $("toolOutput");
+
+  panel.classList.add("show");
+  inputs.replaceChildren();
+  actions.replaceChildren();
+  output.hidden = true;
+  output.textContent = "";
+  $("toolStatus").textContent = "";
+
+  const configs = {
+    json: ["JSON Formatter", "Validate JSON, format it neatly or minify it."],
+    base64: ["Base64 Converter", "Encode or decode text using UTF-8 support."],
+    diff: ["Text Diff", "Compare two texts line by line."],
+    markdown: ["Markdown Previewer", "Preview basic headings, lists, bold and inline code."],
+    html: ["HTML Playground", "Run your HTML in a sandboxed preview."],
+    prompt: ["Prompt Builder", "Build a structured prompt for your AI assistant."]
+  };
+
+  $("toolTitle").textContent = configs[name][0];
+  $("toolDescription").textContent = configs[name][1];
+
+  if (name === "json" || name === "base64" || name === "markdown" || name === "html") {
+    const area = document.createElement("textarea");
+    area.id = "mainInput";
+    area.placeholder = name === "json" ? '{"name":"Andronex","active":true}'
+      : name === "markdown" ? "# Hello\n\nWrite **Markdown** here."
+      : name === "html" ? "<h1>Hello, Andronex!</h1>\n<p>Edit this HTML.</p>"
+      : "Enter text here...";
+    area.setAttribute("aria-label", "Tool input");
+    inputs.appendChild(area);
+
+    if (name === "html") {
+      const note = document.createElement("p");
+      note.className = "status";
+      note.textContent = "Preview runs in a sandboxed iframe. Avoid entering untrusted code into tools you don't control.";
+      inputs.appendChild(note);
+    }
+  }
+
+  if (name === "diff") {
+    inputs.appendChild(makeArea("leftInput", "Original text..."));
+    inputs.appendChild(makeArea("rightInput", "Modified text..."));
+  }
+
+  if (name === "prompt") {
+    inputs.appendChild(makeInput("roleInput", "Role (e.g. experienced JavaScript tutor)"));
+    inputs.appendChild(makeInput("taskInput", "Task or goal"));
+    inputs.appendChild(makeInput("contextInput", "Context (optional)"));
+    inputs.appendChild(makeInput("formatInput", "Desired output format"));
+  }
+
+  if (name === "json") {
+    addAction("Format JSON", () => processJSON(false));
+    addAction("Minify JSON", () => processJSON(true));
+  } else if (name === "base64") {
+    addAction("Encode", () => processBase64(true));
+    addAction("Decode", () => processBase64(false));
+  } else if (name === "diff") {
+    addAction("Compare Text", processDiff);
+  } else if (name === "markdown") {
+    addAction("Preview Markdown", processMarkdown);
+  } else if (name === "html") {
+    addAction("Run Preview", processHTML);
+  } else if (name === "prompt") {
+    addAction("Generate Prompt", processPrompt);
+  }
+
+  addAction("Clear", clearTool, true);
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function makeArea(id, placeholder) {
+  const area = document.createElement("textarea");
+  area.id = id;
+  area.placeholder = placeholder;
+  area.setAttribute("aria-label", placeholder);
+  area.style.marginBottom = "12px";
+  return area;
+}
+
+function makeInput(id, placeholder) {
+  const input = document.createElement("input");
+  input.id = id;
+  input.type = "text";
+  input.placeholder = placeholder;
+  input.setAttribute("aria-label", placeholder);
+  return input;
+}
+
+function addAction(label, callback, secondary = false) {
+  const button = document.createElement("button");
+  button.className = "action-btn" + (secondary ? " secondary" : "");
+  button.textContent = label;
+  button.addEventListener("click", callback);
+  $("toolActions").appendChild(button);
+}
+
+function showOutput(text, status = "") {
+  const output = $("toolOutput");
+  output.replaceChildren();
+  output.hidden = false;
+
+  if (text instanceof Node) {
+    output.appendChild(text);
+  } else {
+    output.textContent = text;
+  }
+
+  $("toolStatus").textContent = status;
+}
+
+function processJSON(minify) {
+  try {
+    const parsed = JSON.parse($("mainInput").value);
+    const result = JSON.stringify(parsed, null, minify ? 0 : 2);
+    showOutput(result, "Valid JSON ✓");
+
+    addCopyButton(result);
+  } catch (error) {
+    showOutput("Invalid JSON: " + error.message);
+  }
+}
+
+function processBase64(encode) {
+  try {
+    const input = $("mainInput").value;
+    let result;
+
+    if (encode) {
+      const bytes = new TextEncoder().encode(input);
+      let binary = "";
+      bytes.forEach(byte => binary += String.fromCharCode(byte));
+      result = btoa(binary);
+    } else {
+      const binary = atob(input.trim());
+      const bytes = Uint8Array.from(binary, char => char.charCodeAt(0));
+      result = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+    }
+
+    showOutput(result, encode ? "Encoding complete ✓" : "Decoding complete ✓");
+    addCopyButton(result);
+  } catch {
+    showOutput("Could not process this input. Check the Base64 data and try again.");
+  }
+}
+
+function processDiff() {
+  const left = $("leftInput").value.split("\n");
+  const right = $("rightInput").value.split("\n");
+  const result = document.createElement("div");
+
+  const max = Math.max(left.length, right.length);
+
+  for (let i = 0; i < max; i++) {
+    const a = left[i];
+    const b = right[i];
+
+    const line = document.createElement("div");
+    line.style.padding = "4px 0";
+    line.style.color = a === b ? "#cbd5e1" : "#fbbf24";
+
+    if (a === b) {
+      line.textContent = "  " + (a ?? "");
+    } else {
+      if (a !== undefined) {
+        const oldLine = document.createElement("div");
+        oldLine.style.color = "#fca5a5";
+        oldLine.textContent = "- " + a;
+        line.appendChild(oldLine);
+      }
+
+      if (b !== undefined) {
+        const newLine = document.createElement("div");
+        newLine.style.color = "#86efac";
+        newLine.textContent = "+ " + b;
+        line.appendChild(newLine);
+      }
+    }
+
+    result.appendChild(line);
+  }
+
+  showOutput(result, "Comparison complete. Red = removed/changed; green = added/changed.");
+}
+
+function escapeHTML(text) {
+  return text.replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function processMarkdown() {
+  const lines = $("mainInput").value.split("\n");
+  const container = document.createElement("div");
+  container.style.fontFamily = "Arial, sans-serif";
+  container.style.lineHeight = "1.8";
+
+  let inList = false;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (line.startsWith("- ") || line.startsWith("* ")) {
+      if (!inList) {
+        const list = document.createElement("ul");
+        list.style.paddingLeft = "25px";
+        container.appendChild(list);
+        container._list = list;
+        inList = true;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = line.slice(2);
+      container._list.appendChild(li);
+      continue;
+    }
+
+    inList = false;
+
+    if (!line) {
+      container.appendChild(document.createElement("br"));
+      continue;
+    }
+
+    const match = line.match(/^(#{1,3})\s+(.*)$/);
+    const element = document.createElement(match ? "h" + match[1].length : "p");
+    element.textContent = match ? match[2] : line;
+    element.style.marginBottom = "8px";
+    container.appendChild(element);
+  }
+
+  showOutput(container, "Preview ready. This supports basic Markdown only.");
+}
+
+function processHTML() {
+  const iframe = document.createElement("iframe");
+  iframe.title = "HTML playground preview";
+  iframe.setAttribute("sandbox", "");
+  iframe.style.width = "100%";
+  iframe.style.height = "300px";
+  iframe.style.background = "white";
+  iframe.style.border = "1px solid #334155";
+  iframe.style.borderRadius = "8px";
+
+  showOutput(iframe, "Preview is isolated in a sandbox.");
+  iframe.srcdoc = $("mainInput").value;
+}
+
+function processPrompt() {
+  const role = $("roleInput").value.trim() || "Helpful expert";
+  const task = $("taskInput").value.trim();
+  const context = $("contextInput").value.trim();
+  const format = $("formatInput").value.trim() || "Clear, structured response";
+
+  if (!task) {
+    $("toolStatus").textContent = "Please enter a task or goal first.";
+    return;
+  }
+
+  const result = [
+    "ROLE:\n" + role,
+    "TASK:\n" + task,
+    context ? "CONTEXT:\n" + context : "",
+    "OUTPUT FORMAT:\n" + format,
+    "INSTRUCTIONS:\nBe accurate, explain important assumptions, and organize the answer clearly."
+  ].filter(Boolean).join("\n\n");
+
+  showOutput(result, "Prompt generated ✓");
+  addCopyButton(result);
+}
+
+function addCopyButton(text) {
+  addAction("Copy Result", async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      $("toolStatus").textContent = "Copied to clipboard ✓";
+    } catch {
+      $("toolStatus").textContent =
+        "Clipboard access unavailable. Select the result and copy it manually.";
+    }
+  }, true);
+}
+
+function clearTool() {
+  $("toolInputs").querySelectorAll("textarea, input").forEach(input => {
+    input.value = "";
+  });
+
+  $("toolOutput").replaceChildren();
+  $("toolOutput").hidden = true;
+  $("toolStatus").textContent = "Cleared.";
+}
+</script>
+
+</body>
+</html>
