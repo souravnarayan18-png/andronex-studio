@@ -612,7 +612,50 @@ a:focus-visible {
     letter-spacing: 3px;
   }
 }
+/* GOSTOCK PRODUCT */
 
+.product-card.gostock {
+background: linear-gradient(
+145deg,
+#102c2b,
+#0b1020 75%
+);
+border-color: #1d6258;
+}
+
+.product-card.gostock:hover {
+border-color: #20d6ad;
+}
+
+.gostock .product-icon {
+background: #16453e;
+}
+
+.gostock .product-category {
+color: #42e6bd;
+}
+
+.gostock .status {
+color: #72f0c7;
+}
+
+.gostock .btn {
+background: #087f68;
+border-color: #087f68;
+}
+
+.gostock .btn:hover {
+background: #0ba487;
+}
+
+.gostock .btn-outline {
+background: transparent;
+border-color: #28776a;
+}
+
+.gostock .btn-outline:hover {
+background: #123b35;
+}
 
 
 
