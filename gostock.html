@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b18">
+
+    <title>GoStock | Andronex Studio</title>
+
+    <meta name="description"
+        content="Discover GoStock by Andronex Studio, an Android paper trading simulator designed to help users explore stock market concepts using virtual trading.">
+
+    <meta name="author" content="Sourav Narayan">
+
+    <link rel="icon" type="image/png" href="andronex-logo.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080b18;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .gostock-container {
+            width: min(1050px, 100%);
+            margin: auto;
+            padding: 35px 18px 60px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #aab8d1;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .back-link:hover {
+            color: #4de5bd;
+        }
+
+        .gostock-hero {
+            text-align: center;
+            padding: 45px 15px 65px;
+            border: 1px solid #194c46;
+            border-radius: 24px;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(23, 154, 126, 0.19),
+                    transparent 65%
+                ),
+                linear-gradient(145deg, #102321, #0b1020 75%);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 25px;
+            border-radius: 25px;
+            border: 1px solid #267d6c;
+            background: linear-gradient(145deg, #164a40, #102b2b);
+            box-shadow: 0 10px 40px rgba(18, 196, 151, 0.12);
+            font-size: 48px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 30px;
+            border: 1px solid #246358;
+            background: #102d29;
+            color: #64eac5;
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 22px 0 12px;
+            font-size: clamp(42px, 9vw, 68px);
+            letter-spacing: -2px;
+        }
+
+        h1 span {
+            color: #42dfb5;
+        }
+
+        .hero-description {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #b4c6c7;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .primary-btn {
+            color: #041510;
+            background: #42dfb5;
+            border: 1px solid #42dfb5;
+        }
+
+        .primary-btn:hover {
+            background: #6af0cc;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            color: #d5e5e5;
+            background: transparent;
+            border: 1px solid #36534f;
+        }
+
+        .secondary-btn:hover {
+            background: #142b28;
+        }
+
+        .notice {
+            max-width: 680px;
+            margin: 25px auto 0;
+            padding: 13px 15px;
+            border: 1px solid #344b48;
+            border-radius: 10px;
+            color: #a9c6c0;
+            background: rgba(5, 18, 17, 0.55);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 55px 0 0;
+        }
+
+        .section-heading {
+            margin: 0 0 12px;
+            font-size: clamp(25px, 5vw, 34px);
+        }
+
+        .section-description {
+            margin: 0 0 25px;
+            color: #aab5ce;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .feature-card {
+            padding: 22px;
+            border: 1px solid #24394a;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #111e2b, #0b1020);
+        }
+
+        .feature-icon {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #aab5ce;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .learning-box {
+            padding: 25px;
+            border: 1px solid #263c50;
+            border-radius: 17px;
+            background: #0e1727;
+        }
+
+        .learning-box p {
+            color: #b1bdd4;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 0;
+        }
+
+        .download-panel {
+            margin-top: 55px;
+            padding: 30px 22px;
+            text-align: center;
+            border: 1px solid #226052;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #102b26, #0b1020);
+        }
+
+        .download-panel h2 {
+            margin: 0 0 12px;
+            font-size: 27px;
+        }
+
+        .download-panel p {
+            color: #b1c9c3;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0 0 22px;
+        }
+
+        .download-panel .action-btn {
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .disclaimer {
+            color: #8292a9;
+            font-size: 12px;
+            line-height: 1.8;
+            margin-top: 18px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px 10px 0;
+            border-top: 1px solid #202a40;
+            text-align: center;
+            color: #8492ad;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        footer a {
+            color: #64eac5;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .gostock-container {
+                padding: 22px 14px 40px;
+            }
+
+            .gostock-hero {
+                padding: 35px 15px;
+                border-radius: 18px;
+            }
+
+            .app-icon {
+                width: 82px;
+                height: 82px;
+                font-size: 40px;
+                border-radius: 21px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding-top: 40px;
+            }
+
+            .download-panel {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="neural-bg"></canvas>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img
+                src="andronex-logo.png"
+                alt="Andronex Studio Logo"
+                class="brand-logo"
+            >
+
+            <div class="brand-name">
+                ANDRONEX
+                <span>STUDIO</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="developer-lab.html">Developer Lab</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="gostock-container">
+
+        <a href="products.html" class="back-link">
+            ← Back to All Products
+        </a>
+
+        <section class="gostock-hero">
+
+            <div class="app-icon" aria-label="GoStock app icon">
+                📈
+            </div>
+
+            <span class="hero-label">
+                ANDRONEX STUDIO PRESENTS
+            </span>
+
+            <h1>Go<span>Stock</span></h1>
+
+            <p class="hero-description">
+                Explore the world of stock markets.
+                Practise your trading decisions in a simulated
+                environment and learn how markets work
+                without putting real money at risk.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#download" class="action-btn primary-btn">
+                    Get GoStock ↓
+                </a>
+
+                <a href="#features" class="action-btn secondary-btn">
+                    Explore Features
+                </a>
+            </div>
+
+            <div class="notice">
+                GoStock is a paper-trading simulator.
+                Virtual trading results do not represent guaranteed
+                real-world profits or investment performance.
+            </div>
+
+        </section>
+
+        <section class="section" id="features">
+
+            <h2 class="section-heading">
+                Explore GoStock
+            </h2>
+
+            <p class="section-description">
+                A practice environment for exploring stock-market
+                concepts and becoming more familiar with trading.
+            </p>
+
+            <div class="features-grid">
+
+                <article class="feature-card">
+                    <div class="feature-icon">💹</div>
+
+                    <h3>Paper Trading</h3>
+
+                    <p>
+                        Practise trading strategies using virtual
+                        money instead of risking your savings.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">📊</div>
+
+                    <h3>Market Exploration</h3>
+
+                    <p>
+                        Explore the market information and trading
+                        features available within the application.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">🧠</div>
+
+                    <h3>Learn by Practising</h3>
+
+                    <p>
+                        Build familiarity with trading decisions
+                        and observe how your virtual portfolio changes.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">📱</div>
+
+                    <h3>Android Experience</h3>
+
+                    <p>
+                        Access your paper-trading experience through
+                        the GoStock Android application.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <h2 class="section-heading">
+                Why Paper Trading?
+            </h2>
+
+            <div class="learning-box">
+
+                <p>
+                    The stock market can be complicated for beginners.
+                    Paper trading provides a way to practise decisions
+                    and understand trading concepts without committing
+                    real money. It can help you learn, but simulated
+                    results may differ from real-market outcomes.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="download-panel" id="download">
+
+            <h2>Start Exploring GoStock</h2>
+
+            <p>
+                Download the Android app and explore its
+                paper-trading experience.
+            </p>
+
+            <!-- Replace the filename if your APK has a different name. -->
+            <a
+                href="gostock.apk"
+                class="action-btn primary-btn"
+                download
+            >
+                Download GoStock APK ↓
+            </a>
+
+            <div class="disclaimer">
+                GoStock is a paper-trading simulator, not a real-money
+                brokerage service. Verify the APK source before installing.
+            </div>
+
+        </section>
+
+        <footer>
+            <p>
+                <strong>ANDRONEX STUDIO</strong>
+            </p>
+
+            <p>Building Intelligence. Shaping Tomorrow.</p>
+
+            <p>
+                <a href="products.html">Explore More Projects</a>
+                &nbsp; | &nbsp;
+                <a href="contact.html">Contact</a>
+            </p>
+
+            <p>© 2026 Andronex Studio. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
