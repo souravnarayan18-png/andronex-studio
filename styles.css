@@ -656,6 +656,49 @@ border-color: #28776a;
 .gostock .btn-outline:hover {
 background: #123b35;
 }
+/* GROWPRO */
 
+.product-card.growpro {
+    background: linear-gradient(
+        145deg,
+        #142b32,
+        #0b1020 75%
+    );
+    border-color: #24534d;
+}
+
+.product-card.growpro:hover {
+    border-color: #35d6a0;
+}
+
+.growpro .product-icon {
+    background: #173e39;
+}
+
+.growpro .product-category {
+    color: #53e0ad;
+}
+
+.growpro .status {
+    color: #75edbd;
+}
+
+.growpro .btn {
+    background: #159b78;
+    border-color: #159b78;
+}
+
+.growpro .btn:hover {
+    background: #20b58e;
+}
+
+.growpro .btn-outline {
+    background: transparent;
+    border-color: #347c6b;
+}
+
+.growpro .btn-outline:hover {
+    background: #173a34;
+}
 
 
