@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090c">
+
+<title>Growpro | Andronex Studio</title>
+
+<meta name="description" content="Growpro by Andronex Studio. Build habits, organise your studies and track your personal performance.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #08090c;
+    color: #f4f0e8;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+:root {
+    --gold: #e8c77d;
+    --gold-dark: #b99754;
+    --muted: #9999a5;
+    --card: #121319;
+    --border: #292a35;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+nav {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* HERO */
+
+.hero {
+    padding: 90px 0 75px;
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    color: var(--gold);
+    border: 1px solid #51452f;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 620px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #17130b;
+}
+
+.btn-primary:hover {
+    background: #f5d995;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+}
+
+/* PREVIEW */
+
+.preview {
+    padding: 30px 0 100px;
+    text-align: center;
+}
+
+.preview img {
+    width: 100%;
+    max-width: 330px;
+    border-radius: 28px;
+    border: 1px solid #393744;
+    box-shadow: 0 25px 80px #000;
+}
+
+.preview-label {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* SECTION */
+
+section {
+    padding: 75px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    border-color: var(--gold-dark);
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.feature-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* PERFORMANCE */
+
+.performance {
+    background: #101116;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.metric {
+    background: var(--card);
+    padding: 28px 15px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    text-align: center;
+}
+
+.metric h3 {
+    color: var(--gold);
+    font-size: 28px;
+}
+
+.metric p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.cta h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* MOBILE */
+
+@media(max-width: 650px) {
+    .hero {
+        padding: 65px 0;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <div class="logo">GROWPRO.</div>
+        <a href="products.html">← Andronex Studio</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero container">
+
+    <div class="tag">A PERSONAL GROWTH PLATFORM</div>
+
+    <h1>Build Better.<br><span>Become Better.</span></h1>
+
+    <p>
+        Your everyday companion for building habits,
+        organising studies and understanding your
+        personal performance.
+    </p>
+
+    <div class="buttons">
+        <a href="#download" class="btn btn-primary">
+            Explore the App ↓
+        </a>
+
+        <a href="#features" class="btn btn-secondary">
+            Discover Features
+        </a>
+    </div>
+
+</header>
+
+<!-- APP PREVIEW -->
+
+<div class="preview container">
+
+    <img src="growpro-preview.jpg"
+         alt="Growpro Performance Gallery Screenshot">
+
+    <p class="preview-label">
+        Growpro · Performance Gallery
+    </p>
+
+</div>
+
+<!-- FEATURES -->
+
+<section id="features">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Everything You Need to <span>Grow.</span></h2>
+            <p>Four essential tools. One personal growth system.</p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature-card">
+                <div class="feature-icon">✓</div>
+                <h3>Task & Habit Manager</h3>
+                <p>
+                    Create daily habits and unique tasks.
+                    Organise date-specific activities using
+                    the calendar and track completed tasks.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Study Manager</h3>
+                <p>
+                    Add study topics, organise your academic
+                    priorities and schedule learning sessions
+                    through the integrated calendar.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Performance Gallery</h3>
+                <p>
+                    Analyse your progress through performance
+                    graphs, efficiency metrics, habit rates
+                    and study statistics.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Daily Reminders</h3>
+                <p>
+                    Enable optional daily 5 PM notifications
+                    to remind yourself to stay consistent
+                    with your planned activities.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PERFORMANCE -->
+
+<section class="performance">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Progress You Can <span>Measure.</span></h2>
+            <p>
+                Understand your performance instead of
+                relying on guesswork.
+            </p>
+        </div>
+
+        <div class="metrics">
+
+            <div class="metric">
+                <h3>Efficiency</h3>
+                <p>Track overall performance</p>
+            </div>
+
+            <div class="metric">
+                <h3>Habit Rate</h3>
+                <p>Monitor habit consistency</p>
+            </div>
+
+            <div class="metric">
+                <h3>Study Focus</h3>
+                <p>Review your study activity</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DOWNLOAD -->
+
+<section class="cta" id="download">
+
+    <div class="container">
+
+        <div class="tag">YOUR NEXT CHAPTER STARTS HERE</div>
+
+        <h2>Start Growing with <span style="color:var(--gold)">Growpro.</span></h2>
+
+        <p>
+            Take control of your habits, studies and progress.
+        </p>
+
+        <a href="YOUR_APK_DOWNLOAD_LINK"
+           class="btn btn-primary">
+            Download for Android ↓
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="container">
+        Growpro is a product of <span>Andronex Studio</span>.
+        <br><br>
+        © 2026 Andronex Studio. All Rights Reserved.
+    </div>
+</footer>
+
+</body>
+  </html>
