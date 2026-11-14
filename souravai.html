@@ -82,6 +82,55 @@
       margin-top: 28px;
     }
 
+    /* APK DOWNLOAD SECTION */
+
+    .souravai-download {
+      max-width: 850px;
+      margin: 50px auto;
+      padding: 35px 25px;
+      text-align: center;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+      border-radius: 22px;
+      background: linear-gradient(
+        145deg,
+        rgba(25, 48, 75, 0.45),
+        rgba(16, 23, 34, 0.85)
+      );
+    }
+
+    .souravai-download h2 {
+      margin-bottom: 12px;
+    }
+
+    .souravai-download p {
+      color: #aebbd0;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .souravai-download .download-note {
+      font-size: 12px;
+      color: #8996aa;
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 30px;
+      background: #60a5fa;
+      color: #07111f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .download-btn:hover {
+      background: #93c5fd;
+      transform: translateY(-3px);
+    }
+
     @media (max-width: 600px) {
       .souravai-grid {
         grid-template-columns: 1fr;
@@ -92,17 +141,26 @@
         margin: 25px auto;
         padding: 22px;
       }
+
+      .souravai-download {
+        margin: 30px 16px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <canvas id="neural-bg"></canvas>
+
+  <!-- HEADER -->
 
   <header>
     <a href="index.html" class="brand">
       <div class="brand-symbol">A</div>
-      <div class="brand-name">ANDRONEX<span>STUDIO</span></div>
+      <div class="brand-name">
+        ANDRONEX<span>STUDIO</span>
+      </div>
     </a>
 
     <nav>
@@ -113,7 +171,10 @@
     </nav>
   </header>
 
+  <!-- HERO -->
+
   <main class="hero">
+
     <div class="tag">THE ORIGINAL AI PROJECT</div>
 
     <h1>Where it all <span>began.</span></h1>
@@ -128,9 +189,29 @@
     <div class="souravai-badge">
       AN EXPERIMENT THAT STARTED A JOURNEY
     </div>
+
+    <div class="souravai-actions">
+
+      <a
+        href="YOUR_SOURAVAI_APK_LINK"
+        class="download-btn"
+        target="_blank"
+        rel="noopener noreferrer">
+        Download SouravAI APK ↓
+      </a>
+
+      <a href="#about-project" class="btn">
+        Explore Project
+      </a>
+
+    </div>
+
   </main>
 
-  <section class="souravai-section">
+  <!-- PROJECT INTRODUCTION -->
+
+  <section class="souravai-section" id="about-project">
+
     <h2>The Beginning of an Idea</h2>
 
     <p>
@@ -146,11 +227,16 @@
       foundation for exploring more personalised
       and capable AI experiences.
     </p>
+
   </section>
 
+  <!-- FEATURES -->
+
   <section class="souravai-grid">
+
     <article class="souravai-card">
       <h3>💬 Conversational AI</h3>
+
       <p>
         Exploring natural conversations that help
         users ask questions, understand concepts
@@ -160,6 +246,7 @@
 
     <article class="souravai-card">
       <h3>🧪 Experimentation</h3>
+
       <p>
         Testing AI models, prompts and integrations
         to understand their strengths, limitations
@@ -169,6 +256,7 @@
 
     <article class="souravai-card">
       <h3>🧠 Personalisation</h3>
+
       <p>
         Exploring the possibility of an assistant
         that can adapt its responses to user
@@ -178,15 +266,20 @@
 
     <article class="souravai-card">
       <h3>🚀 A Foundation for Growth</h3>
+
       <p>
         Lessons from SouravAI helped shape the
         broader vision behind the next generation
         of Andronex AI development.
       </p>
     </article>
+
   </section>
 
+  <!-- SOURAVAI TO ORVYN -->
+
   <section class="souravai-section project-connection">
+
     <h2>From SouravAI to Orvyn</h2>
 
     <p>
@@ -204,6 +297,7 @@
     </p>
 
     <div class="souravai-actions">
+
       <a href="orvyn.html" class="btn">
         Discover Orvyn →
       </a>
@@ -211,10 +305,41 @@
       <a href="products.html" class="btn">
         Explore Our Projects
       </a>
+
     </div>
+
   </section>
 
+  <!-- APK DOWNLOAD -->
+
+  <section class="souravai-download">
+
+    <h2>Experience SouravAI.</h2>
+
+    <p>
+      Get the Android application and explore
+      the original AI assistant project from
+      Andronex Studio.
+    </p>
+
+    <a
+      href="souravai.apk"
+      class="download-btn"
+      target="_blank"
+      rel="noopener noreferrer">
+      Download Android APK ↓
+    </a>
+
+    <p class="download-note">
+      Android application · APK download
+    </p>
+
+  </section>
+
+  <!-- PROJECT STATUS -->
+
   <section class="souravai-section">
+
     <h2>Project Status</h2>
 
     <p>
@@ -224,12 +349,16 @@
       Orvyn continues to develop the broader vision
       that grew from this beginning.
     </p>
+
   </section>
+
+  <!-- FOOTER -->
 
   <footer>
     © 2026 Andronex Studio. All rights reserved.
   </footer>
 
   <script src="script.js"></script>
+
 </body>
-</html>
+  </html>
