@@ -1,260 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="theme-color" content="#070b14">
-  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
 
-  <title>Orvyn AI | Intelligent Assistance by Andronex Studio</title>
+  <!-- Primary SEO -->
+  <title>Orvyn AI | AI Assistant by Andronex Studio</title>
 
-  <meta
-    name="description"
-    content="Discover Orvyn AI, the flagship AI assistant project from Andronex Studio, exploring conversational intelligence, personalisation, memory and web research."
-  >
+  <meta name="description"
+    content="Meet Orvyn AI, an intelligent AI assistant developed by Andronex Studio. Explore conversational AI, personalisation, memory, multi-model integration and web research.">
 
+  <meta name="author" content="Andronex Studio">
+  <meta name="robots" content="index, follow">
+
+  <meta name="keywords"
+    content="Orvyn, Orvyn AI, Andronex Studio, AI assistant, conversational AI, multi-model AI, Sourav Narayan">
+
+  <!-- Canonical -->
+  <link rel="canonical"
+    href="https://andronexstudio.netlify.app/orvyn.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Andronex Studio">
+  <meta property="og:title" content="Orvyn AI | Intelligent Assistance">
+  <meta property="og:description"
+    content="Discover Orvyn, an evolving AI assistant project by Andronex Studio.">
+  <meta property="og:url"
+    content="https://andronexstudio.netlify.app/orvyn.html">
+  <meta property="og:image"
+    content="https://andronexstudio.netlify.app/orvyn-preview.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orvyn AI">
+  <meta name="twitter:description"
+    content="An intelligent AI assistant project by Andronex Studio.">
+  <meta name="twitter:image"
+    content="https://andronexstudio.netlify.app/orvyn-preview.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="andronex-logo.png">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://andronexstudio.netlify.app/#organization",
+        "name": "Andronex Studio",
+        "url": "https://andronexstudio.netlify.app/"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://andronexstudio.netlify.app/orvyn.html#software",
+        "name": "Orvyn AI",
+        "alternateName": "Orvyn",
+        "url": "https://andronexstudio.netlify.app/orvyn.html",
+        "description": "Orvyn is an AI assistant project exploring conversational intelligence, personalisation, memory, multi-model AI and web research.",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Android",
+        "creator": {
+          "@id": "https://andronexstudio.netlify.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://andronexstudio.netlify.app/#organization"
+        },
+        "image": "https://andronexstudio.netlify.app/orvyn-preview.jpg",
+        "inLanguage": "en",
+        "isAccessibleForFree": true
+      }
+    ]
+  }
+  </script>
+
   <style>
-    .orvyn-hero {
-      padding-top: 65px;
-      padding-bottom: 45px;
-    }
-
-    .orvyn-label {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid rgba(0, 220, 255, 0.3);
-      border-radius: 30px;
-      background: rgba(0, 200, 255, 0.07);
-      color: #67e8f9;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
-
-    .orvyn-hero h1 span {
-      color: #22d3ee;
-    }
-
-    .orvyn-hero .hero-description {
-      max-width: 680px;
-      margin: 20px auto;
-      line-height: 1.9;
-      color: #aab8cc;
-    }
-
-    .orvyn-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin: 28px 0;
-    }
-
-    .orvyn-preview {
-      width: min(88%, 340px);
-      margin: 42px auto 20px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(34, 211, 238, 0.3);
-      background: #101722;
-      box-shadow: 0 0 40px rgba(0, 200, 255, 0.12);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .orvyn-preview:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 48px rgba(0, 200, 255, 0.2);
-    }
-
-    .orvyn-preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .preview-caption {
-      color: #8293aa;
-      font-size: 13px;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .orvyn-section {
-      max-width: 1000px;
-      margin: 55px auto;
-      padding: 28px 22px;
-    }
-
-    .orvyn-section-heading {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .orvyn-section-heading h2 {
-      font-size: clamp(26px, 4vw, 38px);
-      margin-bottom: 12px;
-    }
-
-    .orvyn-section-heading p {
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #9caec5;
-    }
-
-    .orvyn-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .orvyn-card {
-      padding: 25px;
-      border: 1px solid rgba(96, 165, 250, 0.16);
-      border-radius: 20px;
-      background: rgba(16, 23, 34, 0.86);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    .orvyn-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(34, 211, 238, 0.5);
-    }
-
-    .orvyn-card .icon {
-      font-size: 27px;
-      margin-bottom: 15px;
-    }
-
-    .orvyn-card h3 {
-      margin: 0 0 12px;
-      color: #e6f5ff;
-    }
-
-    .orvyn-card p {
-      color: #aab8cc;
-      line-height: 1.8;
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-
-    .orvyn-status {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 6px 10px;
-      border-radius: 20px;
-      background: rgba(96, 165, 250, 0.09);
-      color: #93c5fd;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    .orvyn-story {
-      border-left: 3px solid #22d3ee;
-      border-radius: 0 18px 18px 0;
-      background: rgba(34, 211, 238, 0.045);
-    }
-
-    .orvyn-story p,
-    .orvyn-section > p {
-      line-height: 1.9;
-      color: #b1bfd1;
-    }
-
-    .orvyn-roadmap {
-      display: grid;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .roadmap-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 18px;
-      border: 1px solid rgba(96, 165, 250, 0.13);
-      border-radius: 15px;
-      background: rgba(16, 23, 34, 0.7);
-    }
-
-    .roadmap-number {
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      color: #67e8f9;
-      background: rgba(34, 211, 238, 0.1);
-      font-weight: bold;
-    }
-
-    .roadmap-item h3 {
-      margin: 3px 0 8px;
-      font-size: 17px;
-    }
-
-    .roadmap-item p {
-      margin: 0;
-      color: #9caec5;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .orvyn-cta {
-      text-align: center;
-      border: 1px solid rgba(34, 211, 238, 0.18);
-      border-radius: 24px;
-      background: rgba(16, 23, 34, 0.8);
-    }
-
-    .orvyn-cta p {
-      max-width: 600px;
-      margin: 15px auto 25px;
-    }
-
-    .orvyn-note {
-      font-size: 12px;
-      color: #8293aa;
-      line-height: 1.8;
-      margin-top: 25px;
-    }
-
-    @media (max-width: 600px) {
-      .orvyn-hero {
-        padding-top: 40px;
-      }
-
-      .orvyn-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .orvyn-section {
-        margin: 30px auto;
-        padding: 22px 16px;
-      }
-
-      .orvyn-card {
-        padding: 21px;
-      }
-
-      .orvyn-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .orvyn-preview,
-      .orvyn-card {
-        transition: none;
-      }
-    }
+    /* KEEP YOUR EXISTING ORVYN CSS HERE */
   </style>
 </head>
-
 <body>
   <canvas id="neural-bg"></canvas>
 
