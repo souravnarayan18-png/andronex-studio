@@ -2,708 +2,1037 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="theme-color" content="#070b14">
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070b14">
+    <meta name="robots" content="index, follow">
 
-  <title>Orvyn AI | Intelligent Assistance by Andronex Studio</title>
+    <title>Orvyn AI | Intelligent Assistance by Andronex Studio</title>
 
-  <meta
-    name="description"
-    content="Discover Orvyn AI, the flagship AI assistant project from Andronex Studio, exploring conversational intelligence, personalisation, memory and web research."
-  >
+    <meta name="description"
+        content="Discover Orvyn AI, the flagship AI assistant project from Andronex Studio, exploring conversational intelligence, personalisation, memory, multi-model AI and web research.">
 
-  <meta name="author" content="Andronex Studio">
+    <meta name="author" content="Andronex Studio">
 
-  <!-- Canonical URL -->
-  <link
-    rel="canonical"
-    href="https://andronexstudio.netlify.app/orvyn.html"
-  >
+    <link rel="canonical"
+        href="https://andronexstudio.netlify.app/orvyn.html">
 
-  <!-- Open Graph Metadata -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Andronex Studio">
-  <meta property="og:title" content="Orvyn AI | Intelligent Assistance by Andronex Studio">
-  <meta
-    property="og:description"
-    content="Discover Orvyn AI, an evolving AI assistant project exploring conversational intelligence, memory and web research."
-  >
-  <meta
-    property="og:url"
-    content="https://andronexstudio.netlify.app/orvyn.html"
-  >
-  <meta
-    property="og:image"
-    content="https://andronexstudio.netlify.app/orvyn-preview.jpg"
-  >
+    <link rel="icon" type="image/png" href="andronex-logo.png">
 
-  <!-- Twitter Card Metadata -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Orvyn AI">
-  <meta
-    name="twitter:description"
-    content="An evolving AI assistant project by Andronex Studio."
-  >
-  <meta
-    name="twitter:image"
-    content="https://andronexstudio.netlify.app/orvyn-preview.jpg"
-  >
+    <!-- OPEN GRAPH -->
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://andronexstudio.netlify.app/#organization",
-        "name": "Andronex Studio",
-        "url": "https://andronexstudio.netlify.app/"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://andronexstudio.netlify.app/orvyn.html#webpage",
-        "url": "https://andronexstudio.netlify.app/orvyn.html",
-        "name": "Orvyn AI | Intelligent Assistance by Andronex Studio",
-        "description": "Discover Orvyn AI, the flagship AI assistant project from Andronex Studio, exploring conversational intelligence, personalisation, memory and web research.",
-        "isPartOf": {
-          "@id": "https://andronexstudio.netlify.app/#website"
-        },
-        "about": {
-          "@type": "SoftwareApplication",
-          "name": "Orvyn AI",
-          "description": "An AI assistant project exploring conversational intelligence, personalisation, memory, multi-model AI and web research."
-        },
-        "publisher": {
-          "@id": "https://andronexstudio.netlify.app/#organization"
-        },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://andronexstudio.netlify.app/#website",
-        "url": "https://andronexstudio.netlify.app/",
-        "name": "Andronex Studio",
-        "publisher": {
-          "@id": "https://andronexstudio.netlify.app/#organization"
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Andronex Studio">
+    <meta property="og:title" content="Orvyn AI | Intelligent Assistance">
+    <meta property="og:description"
+        content="Explore Orvyn, an evolving AI assistant project by Andronex Studio.">
+    <meta property="og:url"
+        content="https://andronexstudio.netlify.app/orvyn.html">
+    <meta property="og:image"
+        content="https://andronexstudio.netlify.app/orvyn-preview.jpg">
+
+    <!-- TWITTER CARD -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orvyn AI">
+    <meta name="twitter:description"
+        content="A more personal, adaptable and capable AI assistant.">
+    <meta name="twitter:image"
+        content="https://andronexstudio.netlify.app/orvyn-preview.jpg">
+
+    <!-- STRUCTURED DATA -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://andronexstudio.netlify.app/#organization",
+                "name": "Andronex Studio",
+                "url": "https://andronexstudio.netlify.app/"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://andronexstudio.netlify.app/#website",
+                "url": "https://andronexstudio.netlify.app/",
+                "name": "Andronex Studio",
+                "publisher": {
+                    "@id": "https://andronexstudio.netlify.app/#organization"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://andronexstudio.netlify.app/orvyn.html#webpage",
+                "url": "https://andronexstudio.netlify.app/orvyn.html",
+                "name": "Orvyn AI | Intelligent Assistance by Andronex Studio",
+                "description": "Discover Orvyn AI, the flagship AI assistant project from Andronex Studio.",
+                "isPartOf": {
+                    "@id": "https://andronexstudio.netlify.app/#website"
+                },
+                "about": {
+                    "@type": "SoftwareApplication",
+                    "name": "Orvyn AI",
+                    "applicationCategory": "UtilitiesApplication",
+                    "description": "An evolving AI assistant project exploring conversational intelligence, personalisation, memory, multi-model AI and web research.",
+                    "operatingSystem": "Android"
+                },
+                "publisher": {
+                    "@id": "https://andronexstudio.netlify.app/#organization"
+                },
+                "inLanguage": "en"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
         }
-      }
-    ]
-  }
-  </script>
 
-  <link rel="stylesheet" href="styles.css">
+        body {
+            margin: 0;
+            background: #070b14;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
 
-  <style>
-    .orvyn-hero {
-      padding-top: 65px;
-      padding-bottom: 45px;
-    }
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    .orvyn-label {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid rgba(0, 220, 255, 0.3);
-      border-radius: 30px;
-      background: rgba(0, 200, 255, 0.07);
-      color: #67e8f9;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
+        .orvyn-container {
+            width: min(1050px, 100%);
+            margin: auto;
+            padding: 35px 18px 60px;
+        }
 
-    .orvyn-hero h1 span {
-      color: #22d3ee;
-    }
+        /* BACK BUTTON */
 
-    .orvyn-hero .hero-description {
-      max-width: 680px;
-      margin: 20px auto;
-      line-height: 1.9;
-      color: #aab8cc;
-    }
+        .back-link {
+            display: inline-block;
+            color: #aab8cc;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
 
-    .orvyn-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin: 28px 0;
-    }
+        .back-link:hover {
+            color: #67e8f9;
+        }
 
-    .orvyn-preview {
-      width: min(88%, 340px);
-      margin: 42px auto 20px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(34, 211, 238, 0.3);
-      background: #101722;
-      box-shadow: 0 0 40px rgba(0, 200, 255, 0.12);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        /* HERO */
 
-    .orvyn-preview:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 48px rgba(0, 200, 255, 0.2);
-    }
+        .orvyn-hero {
+            text-align: center;
+            padding: 45px 15px 55px;
+            border: 1px solid #16445a;
+            border-radius: 24px;
 
-    .orvyn-preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(0, 190, 255, 0.17),
+                    transparent 65%
+                ),
+                linear-gradient(145deg, #10202e, #090e1b 75%);
+        }
 
-    .preview-caption {
-      color: #8293aa;
-      font-size: 13px;
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        .orvyn-icon {
+            width: 100px;
+            height: 100px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 25px;
 
-    .orvyn-section {
-      max-width: 1000px;
-      margin: 55px auto;
-      padding: 28px 22px;
-    }
+            border-radius: 25px;
+            border: 1px solid #26728d;
 
-    .orvyn-section-heading {
-      text-align: center;
-      margin-bottom: 35px;
-    }
+            background: linear-gradient(
+                145deg,
+                #123c52,
+                #102032
+            );
 
-    .orvyn-section-heading h2 {
-      font-size: clamp(26px, 4vw, 38px);
-      margin-bottom: 12px;
-    }
+            box-shadow: 0 10px 40px rgba(0, 190, 255, 0.13);
 
-    .orvyn-section-heading p {
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #9caec5;
-    }
+            font-size: 48px;
+        }
 
-    .orvyn-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
+        .hero-label {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 30px;
 
-    .orvyn-card {
-      padding: 25px;
-      border: 1px solid rgba(96, 165, 250, 0.16);
-      border-radius: 20px;
-      background: rgba(16, 23, 34, 0.86);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
+            border: 1px solid #20566e;
+            background: #10283a;
 
-    .orvyn-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(34, 211, 238, 0.5);
-    }
+            color: #67e8f9;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-    .orvyn-card .icon {
-      font-size: 27px;
-      margin-bottom: 15px;
-    }
+        .orvyn-hero h1 {
+            margin: 22px 0 12px;
+            font-size: clamp(42px, 9vw, 68px);
+            letter-spacing: -2px;
+        }
 
-    .orvyn-card h3 {
-      margin: 0 0 12px;
-      color: #e6f5ff;
-    }
+        .orvyn-hero h1 span {
+            color: #22d3ee;
+        }
 
-    .orvyn-card p {
-      color: #aab8cc;
-      line-height: 1.8;
-      font-size: 14px;
-      margin-bottom: 0;
-    }
+        .hero-description {
+            max-width: 650px;
+            margin: auto;
 
-    .orvyn-status {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 6px 10px;
-      border-radius: 20px;
-      background: rgba(96, 165, 250, 0.09);
-      color: #93c5fd;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
+            color: #b1c2d5;
+            font-size: 15px;
+            line-height: 1.9;
+        }
 
-    .orvyn-story {
-      border-left: 3px solid #22d3ee;
-      border-radius: 0 18px 18px 0;
-      background: rgba(34, 211, 238, 0.045);
-    }
+        .project-status {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 8px 13px;
 
-    .orvyn-story p,
-    .orvyn-section > p {
-      line-height: 1.9;
-      color: #b1bfd1;
-    }
+            border-radius: 30px;
+            background: rgba(34, 211, 238, 0.09);
 
-    .orvyn-roadmap {
-      display: grid;
-      gap: 15px;
-      margin-top: 25px;
-    }
+            color: #67e8f9;
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
 
-    .roadmap-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 18px;
-      border: 1px solid rgba(96, 165, 250, 0.13);
-      border-radius: 15px;
-      background: rgba(16, 23, 34, 0.7);
-    }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 28px;
+        }
 
-    .roadmap-number {
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      color: #67e8f9;
-      background: rgba(34, 211, 238, 0.1);
-      font-weight: bold;
-    }
+        .action-btn {
+            display: inline-block;
+            padding: 14px 22px;
 
-    .roadmap-item h3 {
-      margin: 3px 0 8px;
-      font-size: 17px;
-    }
+            border-radius: 10px;
+            text-decoration: none;
 
-    .roadmap-item p {
-      margin: 0;
-      color: #9caec5;
-      line-height: 1.7;
-      font-size: 14px;
-    }
+            font-size: 14px;
+            font-weight: bold;
 
-    .orvyn-cta {
-      text-align: center;
-      border: 1px solid rgba(34, 211, 238, 0.18);
-      border-radius: 24px;
-      background: rgba(16, 23, 34, 0.8);
-    }
+            transition: 0.2s;
+        }
 
-    .orvyn-cta p {
-      max-width: 600px;
-      margin: 15px auto 25px;
-    }
+        .primary-btn {
+            color: #03151d;
+            background: #22d3ee;
+            border: 1px solid #22d3ee;
+        }
 
-    .orvyn-note {
-      font-size: 12px;
-      color: #8293aa;
-      line-height: 1.8;
-      margin-top: 25px;
-    }
+        .primary-btn:hover {
+            background: #67e8f9;
+            transform: translateY(-2px);
+        }
 
-    @media (max-width: 600px) {
-      .orvyn-hero {
-        padding-top: 40px;
-      }
+        .secondary-btn {
+            color: #d5eaff;
+            background: transparent;
+            border: 1px solid #31536c;
+        }
 
-      .orvyn-grid {
-        grid-template-columns: 1fr;
-      }
+        .secondary-btn:hover {
+            background: #15283a;
+        }
 
-      .orvyn-section {
-        margin: 30px auto;
-        padding: 22px 16px;
-      }
+        /* PREVIEW */
 
-      .orvyn-card {
-        padding: 21px;
-      }
+        .preview-wrapper {
+            width: min(88%, 340px);
+            margin: 42px auto 0;
 
-      .orvyn-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid #23617b;
 
-    @media (prefers-reduced-motion: reduce) {
-      .orvyn-preview,
-      .orvyn-card {
-        transition: none;
-      }
-    }
-  </style>
+            background: #101722;
+
+            box-shadow: 0 0 40px rgba(0, 190, 255, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .preview-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 48px rgba(0, 190, 255, 0.2);
+        }
+
+        .preview-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .preview-caption {
+            margin-top: 14px;
+            color: #8293aa;
+            font-size: 12px;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            padding: 55px 0 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 12px;
+            font-size: clamp(25px, 5vw, 35px);
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #aab8cc;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* FEATURE CARDS */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .feature-card {
+            padding: 23px;
+
+            border: 1px solid #243d53;
+            border-radius: 16px;
+
+            background: linear-gradient(
+                145deg,
+                #122033,
+                #0b1120
+            );
+
+            transition: 0.25s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #22d3ee;
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+        }
+
+        .feature-card p {
+            margin: 0;
+
+            color: #aab8cc;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .feature-status {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 10px;
+
+            border-radius: 20px;
+            background: rgba(34, 211, 238, 0.08);
+
+            color: #67e8f9;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* STORY */
+
+        .story-box {
+            padding: 26px;
+
+            border-left: 3px solid #22d3ee;
+            border-radius: 0 16px 16px 0;
+
+            background: rgba(34, 211, 238, 0.045);
+        }
+
+        .story-box h2 {
+            margin-top: 0;
+        }
+
+        .story-box p {
+            color: #b1c2d5;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* ROADMAP */
+
+        .roadmap {
+            display: grid;
+            gap: 14px;
+        }
+
+        .roadmap-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            padding: 18px;
+
+            border: 1px solid #25394e;
+            border-radius: 14px;
+
+            background: #101a2a;
+        }
+
+        .roadmap-number {
+            flex-shrink: 0;
+
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+            background: #12374a;
+            color: #67e8f9;
+
+            font-weight: bold;
+        }
+
+        .roadmap-item h3 {
+            margin: 3px 0 8px;
+            font-size: 16px;
+        }
+
+        .roadmap-item p {
+            margin: 0;
+            color: #aab8cc;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .cta-panel {
+            margin-top: 55px;
+            padding: 32px 22px;
+
+            text-align: center;
+
+            border: 1px solid #20566e;
+            border-radius: 20px;
+
+            background: linear-gradient(
+                145deg,
+                #102638,
+                #0a1120
+            );
+        }
+
+        .cta-panel h2 {
+            margin: 0 0 12px;
+            font-size: 27px;
+        }
+
+        .cta-panel p {
+            max-width: 600px;
+            margin: 0 auto 22px;
+
+            color: #b1c2d5;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            margin-top: 22px;
+            color: #8293aa;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+
+        .page-footer {
+            margin-top: 50px;
+            padding: 25px 10px 0;
+
+            border-top: 1px solid #202a40;
+
+            text-align: center;
+            color: #8492ad;
+
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .page-footer a {
+            color: #67e8f9;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .orvyn-container {
+                padding: 22px 14px 40px;
+            }
+
+            .orvyn-hero {
+                padding: 35px 15px;
+                border-radius: 18px;
+            }
+
+            .orvyn-icon {
+                width: 82px;
+                height: 82px;
+                font-size: 40px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding-top: 40px;
+            }
+
+            .feature-card {
+                padding: 21px;
+            }
+
+            .cta-panel {
+                margin-top: 40px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-  <canvas id="neural-bg"></canvas>
-
-  <header>
-    <a href="index.html" class="brand">
-      <div class="brand-symbol">A</div>
-      <div class="brand-name">
-        ANDRONEX<span>STUDIO</span>
-      </div>
-    </a>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-
-  <main class="hero orvyn-hero">
-
-    <div class="orvyn-label">
-      ANDRONEX STUDIO · FLAGSHIP AI PROJECT
-    </div>
-
-    <h1>
-      Meet <span>Orvyn.</span>
-    </h1>
-
-    <p class="hero-description">
-      More than a conversation. A vision for a more
-      personal, adaptable and capable AI assistant.
-
-      Orvyn is being developed to explore the possibilities
-      of conversational intelligence, memory, research
-      and multi-model AI.
-    </p>
-
-    <div class="tag">
-      PROJECT STATUS: IN DEVELOPMENT
-    </div>
-
-    <div class="orvyn-actions">
-      <a href="#capabilities" class="btn">
-        Explore Orvyn ↓
-      </a>
-
-      <a href="souravai.html" class="btn">
-        Discover Its Origins →
-      </a>
-    </div>
-
-    <figure class="orvyn-preview">
-      <img
-        src="orvyn-preview.jpg"
-        alt="Preview of the Orvyn AI assistant interface"
-        loading="lazy"
-        width="340"
-      >
-    </figure>
-
-    <p class="preview-caption">
-      A preview of the Orvyn interface.
-    </p>
-
-  </main>
-
-  <!-- VISION -->
-
-  <section class="orvyn-section">
-
-    <div class="orvyn-section-heading">
-      <h2>Built Around a Bigger Vision</h2>
-
-      <p>
-        Orvyn explores how different AI capabilities
-        could work together in one accessible assistant.
-      </p>
-    </div>
-
-    <p>
-      Many AI experiences begin and end with a single
-      question and answer. Orvyn's broader vision is to
-      explore a more continuous experience: one that can
-      understand conversational context, adapt its style,
-      help investigate ideas and support creative work.
-    </p>
-
-    <p>
-      The project combines practical experimentation
-      with a long-term ambition to make AI assistance
-      more useful in everyday life.
-    </p>
-
-  </section>
-
-  <!-- CAPABILITIES -->
-
-  <section class="orvyn-section" id="capabilities">
-
-    <div class="orvyn-section-heading">
-      <h2>Core Areas of Development</h2>
-
-      <p>
-        The capabilities below describe Orvyn's development
-        direction. Availability depends on the current build.
-      </p>
-    </div>
-
-    <div class="orvyn-grid">
-
-      <article class="orvyn-card">
-        <div class="icon">💬</div>
-        <h3>Conversational Intelligence</h3>
-
-        <p>
-          An AI experience designed to help users ask
-          questions, understand complex topics, solve
-          problems and explore new ideas through dialogue.
-        </p>
-
-        <span class="orvyn-status">
-          CORE AI EXPERIENCE
-        </span>
-      </article>
-
-      <article class="orvyn-card">
-        <div class="icon">🧠</div>
-        <h3>Personalisation & Memory</h3>
-
-        <p>
-          Exploring ways to retain useful context and
-          preferences across conversations, so the
-          assistant can offer a more consistent experience.
-        </p>
-
-        <span class="orvyn-status">
-          DEVELOPMENT AREA
-        </span>
-      </article>
-
-      <article class="orvyn-card">
-        <div class="icon">⚡</div>
-        <h3>Multi-Model AI</h3>
-
-        <p>
-          Experimenting with different AI models to
-          balance response speed, reasoning quality,
-          model availability and resource limits.
-        </p>
-
-        <span class="orvyn-status">
-          MODEL INTEGRATION
-        </span>
-      </article>
-
-      <article class="orvyn-card">
-        <div class="icon">🌐</div>
-        <h3>Web Research</h3>
-
-        <p>
-          A research-oriented direction focused on
-          accessing current information and helping
-          users investigate topics with supporting sources.
-        </p>
-
-        <span class="orvyn-status">
-          RESEARCH CAPABILITY
-        </span>
-      </article>
-
-      <article class="orvyn-card">
-        <div class="icon">🛠️</div>
-        <h3>Practical Tools</h3>
-
-        <p>
-          The broader vision includes useful tools for
-          everyday tasks, problem-solving, calculations
-          and creative experimentation.
-        </p>
-
-        <span class="orvyn-status">
-          EXPANDING VISION
-        </span>
-      </article>
-
-      <article class="orvyn-card">
-        <div class="icon">📱</div>
-        <h3>Mobile-First Access</h3>
-
-        <p>
-          A focus on making the experience accessible
-          and convenient on mobile devices, with an
-          interface designed for everyday use.
-        </p>
-
-        <span class="orvyn-status">
-          ACCESSIBILITY
-        </span>
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- PERSONALITY -->
-
-  <section class="orvyn-section orvyn-story">
-
-    <h2>A More Personal AI Experience</h2>
-
-    <p>
-      Orvyn's design direction emphasises a recognisable
-      conversational personality, clear communication
-      and responses adapted to the context of a discussion.
-    </p>
-
-    <p>
-      The objective is not simply to make an assistant
-      sound human. It is to create an experience that feels
-      approachable while remaining useful, transparent
-      about its limitations and focused on the user's task.
-    </p>
-
-  </section>
-
-  <!-- ORIGIN STORY -->
-
-  <section class="orvyn-section">
-
-    <div class="orvyn-section-heading">
-      <h2>From SouravAI to Orvyn</h2>
-
-      <p>
-        Every ambitious project has an origin story.
-      </p>
-    </div>
-
-    <p>
-      Orvyn grew from the experimentation behind SouravAI,
-      the original AI assistant project that began this
-      journey. Working with AI models, prompts and software
-      tools helped shape a broader vision for a more
-      personalised and versatile assistant.
-    </p>
-
-    <p>
-      SouravAI represents the beginning. Orvyn represents
-      the next stage of that evolving vision.
-    </p>
-
-    <div class="orvyn-actions">
-      <a href="souravai.html" class="btn">
-        Explore SouravAI →
-      </a>
-    </div>
-
-  </section>
-
-  <!-- ROADMAP -->
-
-  <section class="orvyn-section">
-
-    <div class="orvyn-section-heading">
-      <h2>The Road Ahead</h2>
-
-      <p>
-        Orvyn is an evolving project. Its development
-        focuses on making the experience more useful
-        while improving reliability and accessibility.
-      </p>
-    </div>
-
-    <div class="orvyn-roadmap">
-
-      <div class="roadmap-item">
-        <div class="roadmap-number">01</div>
-
-        <div>
-          <h3>Improve the Core Chat Experience</h3>
-
-          <p>
-            Refine response quality, usability,
-            reliability and the mobile interface.
-          </p>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-number">02</div>
-
-        <div>
-          <h3>Strengthen Personalisation</h3>
-
-          <p>
-            Develop useful context and memory features
-            with appropriate privacy controls.
-          </p>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-number">03</div>
-
-        <div>
-          <h3>Expand Research Capabilities</h3>
-
-          <p>
-            Explore reliable information retrieval,
-            source attribution and research workflows.
-          </p>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-number">04</div>
-
-        <div>
-          <h3>Build an Accessible Demo</h3>
-
-          <p>
-            Work toward a browser-based experience
-            that visitors can test without installing
-            an application.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- DEMO CTA -->
-
-  <section class="orvyn-section orvyn-cta">
-
-    <h2>Experience the Vision</h2>
-
-    <p>
-      Orvyn is being developed under Andronex Studio.
-      A public browser-based demo is a goal for the project.
-      Availability will be announced when the demo is ready.
-    </p>
-
-    <a href="products.html" class="btn">
-      Explore Andronex Projects →
-    </a>
-
-    <p class="orvyn-note">
-      Orvyn is an independent project in development.
-      Features and availability may change as development
-      progresses. Planned capabilities are not necessarily
-      available in the current build.
-    </p>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    © 2026 Andronex Studio. All rights reserved.
-  </footer>
-
-  <script src="script.js"></script>
+    <canvas id="neural-bg"></canvas>
+
+    <header>
+
+        <a href="index.html" class="brand">
+
+            <img
+                src="andronex-logo.png"
+                alt="Andronex Studio"
+                class="brand-logo"
+            >
+
+            <div class="brand-name">
+                ANDRONEX
+                <span>STUDIO</span>
+            </div>
+
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="developer-lab.html">Developer Lab</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+    <main class="orvyn-container">
+
+        <a href="products.html" class="back-link">
+            ← Back to All Products
+        </a>
+
+        <!-- HERO -->
+
+        <section class="orvyn-hero">
+
+            <div class="orvyn-icon">
+                🤖
+            </div>
+
+            <span class="hero-label">
+                ANDRONEX STUDIO PRESENTS
+            </span>
+
+            <h1>
+                Meet <span>Orvyn.</span>
+            </h1>
+
+            <p class="hero-description">
+                More than a conversation. A vision for a
+                more personal, adaptable and capable AI assistant.
+
+                Explore conversational intelligence, persistent
+                context, multi-model AI and research capabilities
+                through an evolving AI project.
+            </p>
+
+            <span class="project-status">
+                ● FLAGSHIP AI PROJECT · IN DEVELOPMENT
+            </span>
+
+            <div class="hero-actions">
+
+                <a href="#capabilities" class="action-btn primary-btn">
+                    Explore Capabilities ↓
+                </a>
+
+                <a href="souravai.html" class="action-btn secondary-btn">
+                    Discover Its Origins →
+                </a>
+
+            </div>
+
+            <figure class="preview-wrapper">
+
+                <img
+                    src="orvyn-preview.jpg"
+                    alt="Orvyn AI assistant interface preview"
+                    loading="lazy"
+                    width="340"
+                >
+
+            </figure>
+
+            <p class="preview-caption">
+                A preview of the Orvyn interface.
+            </p>
+
+        </section>
+
+        <!-- VISION -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>Built Around a Bigger Vision</h2>
+
+                <p>
+                    Exploring how different AI capabilities
+                    can work together in one accessible assistant.
+                </p>
+
+            </div>
+
+            <div class="story-box">
+
+                <p>
+                    Orvyn is an independent AI assistant project
+                    developed under Andronex Studio.
+
+                    Its broader vision is to move beyond isolated
+                    question-and-answer interactions and explore
+                    a more continuous, contextual and personalised
+                    AI experience.
+                </p>
+
+                <p>
+                    Through experimentation with language models,
+                    memory systems, research tools and software
+                    architecture, Orvyn aims to explore new
+                    possibilities in everyday AI assistance.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CAPABILITIES -->
+
+        <section class="section" id="capabilities">
+
+            <div class="section-heading">
+
+                <h2>Core Capabilities</h2>
+
+                <p>
+                    Explore the technologies and features
+                    that shape Orvyn's development.
+                </p>
+
+            </div>
+
+            <div class="features-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">💬</div>
+
+                    <h3>Conversational Intelligence</h3>
+
+                    <p>
+                        Designed to understand questions,
+                        explain complex topics, solve problems
+                        and support creative thinking.
+                    </p>
+
+                    <span class="feature-status">
+                        CORE EXPERIENCE
+                    </span>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">🧠</div>
+
+                    <h3>Memory & Personalisation</h3>
+
+                    <p>
+                        Exploring persistent context and
+                        personalisation to create more
+                        consistent conversations.
+                    </p>
+
+                    <span class="feature-status">
+                        MEMORY SYSTEM
+                    </span>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">⚡</div>
+
+                    <h3>Multi-Model Intelligence</h3>
+
+                    <p>
+                        Integrating different AI models to
+                        explore response quality, reasoning,
+                        speed and availability.
+                    </p>
+
+                    <span class="feature-status">
+                        MODEL INTEGRATION
+                    </span>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">🌐</div>
+
+                    <h3>Web Research</h3>
+
+                    <p>
+                        Research-oriented capabilities for
+                        accessing information, investigating
+                        topics and exploring external sources.
+                    </p>
+
+                    <span class="feature-status">
+                        RESEARCH MODE
+                    </span>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">🛠️</div>
+
+                    <h3>Practical Tools</h3>
+
+                    <p>
+                        A growing collection of utility-oriented
+                        capabilities for calculations,
+                        problem-solving and everyday tasks.
+                    </p>
+
+                    <span class="feature-status">
+                        PRODUCTIVITY
+                    </span>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">📱</div>
+
+                    <h3>Mobile-First Experience</h3>
+
+                    <p>
+                        An accessible mobile-oriented interface
+                        designed to make AI assistance
+                        convenient for everyday use.
+                    </p>
+
+                    <span class="feature-status">
+                        ANDROID EXPERIENCE
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- PERSONALITY -->
+
+        <section class="section">
+
+            <div class="story-box">
+
+                <h2>A More Personal AI Experience</h2>
+
+                <p>
+                    Orvyn explores a recognisable conversational
+                    personality, contextual responses and
+                    adaptable communication.
+
+                    The goal is not simply to imitate human
+                    behaviour, but to create an approachable
+                    assistant that remains useful, transparent
+                    and focused on the user's needs.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ORIGIN -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>From SouravAI to Orvyn</h2>
+
+                <p>
+                    Every ambitious project has an origin.
+                </p>
+
+            </div>
+
+            <div class="story-box">
+
+                <p>
+                    Orvyn grew from the experimentation behind
+                    SouravAI, the original AI assistant project
+                    that began this journey.
+
+                    Working with AI models, prompts and software
+                    tools helped shape a broader vision for
+                    a more personalised and versatile assistant.
+                </p>
+
+                <p>
+                    SouravAI represents the beginning.
+                    Orvyn represents the next stage of
+                    that evolving vision.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="souravai.html"
+                       class="action-btn primary-btn">
+                        Explore SouravAI →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ROADMAP -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>The Road Ahead</h2>
+
+                <p>
+                    An evolving project with a focus on
+                    capability, reliability and accessibility.
+                </p>
+
+            </div>
+
+            <div class="roadmap">
+
+                <article class="roadmap-item">
+
+                    <div class="roadmap-number">01</div>
+
+                    <div>
+
+                        <h3>Core Experience</h3>
+
+                        <p>
+                            Improve response quality,
+                            usability and overall reliability.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="roadmap-item">
+
+                    <div class="roadmap-number">02</div>
+
+                    <div>
+
+                        <h3>Advanced Personalisation</h3>
+
+                        <p>
+                            Strengthen contextual understanding
+                            and persistent memory capabilities.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="roadmap-item">
+
+                    <div class="roadmap-number">03</div>
+
+                    <div>
+
+                        <h3>Research Capabilities</h3>
+
+                        <p>
+                            Explore information retrieval,
+                            research workflows and source attribution.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="roadmap-item">
+
+                    <div class="roadmap-number">04</div>
+
+                    <div>
+
+                        <h3>Expanded Accessibility</h3>
+
+                        <p>
+                            Explore additional ways to make
+                            Orvyn accessible across devices
+                            and platforms.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+
+        <section class="cta-panel">
+
+            <h2>Experience the Vision</h2>
+
+            <p>
+                Orvyn is being developed under Andronex Studio.
+                Explore the wider ecosystem and discover
+                other projects from the studio.
+            </p>
+
+            <a href="products.html"
+               class="action-btn primary-btn">
+                Explore All Projects →
+            </a>
+
+            <p class="disclaimer">
+                Orvyn is an evolving independent AI project.
+                Features, capabilities and availability may
+                change during development. Planned capabilities
+                are not necessarily available in every build.
+            </p>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="page-footer">
+
+            <p>
+                <strong>ANDRONEX STUDIO</strong>
+            </p>
+
+            <p>
+                Building Intelligence. Shaping Tomorrow.
+            </p>
+
+            <p>
+                <a href="products.html">All Projects</a>
+                &nbsp; | &nbsp;
+                <a href="contact.html">Contact</a>
+            </p>
+
+            <p>
+                © 2026 Andronex Studio. All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
   </html>
