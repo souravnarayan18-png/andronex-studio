@@ -2,47 +2,39 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/</loc>
+        <priority>1.0</priority>
+    </url>
 
-  <url>
-    <loc>https://souravnarayan18-png,github.io/andronex-studio/products.html</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/products.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/orvyn.html</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/orvyn.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/Growpro.html</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/SouravAI.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-  <url>
-    <loc>https://souravnarayan18-png.gothub.io/andronex-studio/souravai.html</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/Growpro.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/about.html</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/about.html</loc>
+        <priority>0.5</priority>
+    </url>
 
-  <url>
-    <loc>https://souravnarayan18-png/andronex-studio.github.io/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/index.html</loc>
-  </url>
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/securery.html</loc>
-  </url>
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/gostock.html</loc>
-  </url>
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/fnap.html</loc>
-  </url>
-  <url>
-    <loc>https://souravnarayan18-png.github.io/andronex-studio/developer-lab.html</loc>
-  </url>
+    <url>
+        <loc>https://souravnarayan18-png.github.io/andronex-studio/contact.html</loc>
+        <priority>0.5</priority>
+    </url>
 
 </urlset>
