@@ -1,6 +1,4 @@
-# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
-# Direct bots to your sitemap to help them find pages faster
 Sitemap: https://souravnarayan18-png.github.io/andronex-studio/sitemap.xml
